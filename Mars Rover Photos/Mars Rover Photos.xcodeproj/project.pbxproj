@@ -26,6 +26,27 @@
 		1852DBF12BBC38D400C883A8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBF02BBC38D400C883A8 /* Colors.xcassets */; };
 		1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBF22BBC3F7800C883A8 /* HomeViewModel.swift */; };
 		1852DBF52BBC3F8100C883A8 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBF42BBC3F8100C883A8 /* HomeViewModelProtocol.swift */; };
+		1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBF82BBC4E3E00C883A8 /* NetworkAssembly.swift */; };
+		1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBFD2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift */; };
+		1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBFF2BBC4EAC00C883A8 /* HTTPRequestExecutor.swift */; };
+		1852DC022BBC4EC300C883A8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC012BBC4EC300C883A8 /* NetworkError.swift */; };
+		1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC032BBC4EDE00C883A8 /* HTTPMethod.swift */; };
+		1852DC062BBC4EE700C883A8 /* HTTPPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC052BBC4EE700C883A8 /* HTTPPath.swift */; };
+		1852DC082BBC4EF100C883A8 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC072BBC4EF100C883A8 /* HTTPRequest.swift */; };
+		1852DC0A2BBC4F8F00C883A8 /* HTTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC092BBC4F8F00C883A8 /* HTTPRequestModel.swift */; };
+		1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC0B2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift */; };
+		1852DC0E2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC0D2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift */; };
+		1852DC102BBC542F00C883A8 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC0F2BBC542F00C883A8 /* HTTPRequestBuilder.swift */; };
+		1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC112BBC548200C883A8 /* HTTPRequestBuilderError.swift */; };
+		1852DC152BBC562000C883A8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC142BBC562000C883A8 /* NetworkService.swift */; };
+		1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC182BBC593D00C883A8 /* PhotoResponse.swift */; };
+		1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC1A2BBC5B3B00C883A8 /* RoverResponse.swift */; };
+		1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC1C2BBC5B4700C883A8 /* CameraResponse.swift */; };
+		1852DC1F2BBC5B4F00C883A8 /* CameraInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC1E2BBC5B4F00C883A8 /* CameraInfoResponse.swift */; };
+		1852DC222BBC5BAB00C883A8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC212BBC5BAB00C883A8 /* Photo.swift */; };
+		1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */; };
+		1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC252BBC683400C883A8 /* PhotosResponse.swift */; };
+		1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC272BBC68C700C883A8 /* RoverType.swift */; };
 		A79CD3DCA07F5F71C3685150 /* Pods_Mars_Rover_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +72,27 @@
 		1852DBF02BBC38D400C883A8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1852DBF22BBC3F7800C883A8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1852DBF42BBC3F8100C883A8 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
+		1852DBF82BBC4E3E00C883A8 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
+		1852DBFD2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestExecutorProtocol.swift; sourceTree = "<group>"; };
+		1852DBFF2BBC4EAC00C883A8 /* HTTPRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestExecutor.swift; sourceTree = "<group>"; };
+		1852DC012BBC4EC300C883A8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		1852DC032BBC4EDE00C883A8 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		1852DC052BBC4EE700C883A8 /* HTTPPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPath.swift; sourceTree = "<group>"; };
+		1852DC072BBC4EF100C883A8 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		1852DC092BBC4F8F00C883A8 /* HTTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestModel.swift; sourceTree = "<group>"; };
+		1852DC0B2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestModelProtocol.swift; sourceTree = "<group>"; };
+		1852DC0D2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilderProtocol.swift; sourceTree = "<group>"; };
+		1852DC0F2BBC542F00C883A8 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
+		1852DC112BBC548200C883A8 /* HTTPRequestBuilderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilderError.swift; sourceTree = "<group>"; };
+		1852DC142BBC562000C883A8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1852DC182BBC593D00C883A8 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
+		1852DC1A2BBC5B3B00C883A8 /* RoverResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverResponse.swift; sourceTree = "<group>"; };
+		1852DC1C2BBC5B4700C883A8 /* CameraResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraResponse.swift; sourceTree = "<group>"; };
+		1852DC1E2BBC5B4F00C883A8 /* CameraInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInfoResponse.swift; sourceTree = "<group>"; };
+		1852DC212BBC5BAB00C883A8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		1852DC252BBC683400C883A8 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
+		1852DC272BBC68C700C883A8 /* RoverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverType.swift; sourceTree = "<group>"; };
 		500C5ED3F7491B8CEB137003 /* Pods-Mars Rover Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.release.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.release.xcconfig"; sourceTree = "<group>"; };
 		7623EA84D4FFF09ADD328160 /* Pods-Mars Rover Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.debug.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.debug.xcconfig"; sourceTree = "<group>"; };
 		A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mars_Rover_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +131,9 @@
 		1852DBAF2BBC063800C883A8 /* Mars Rover Photos */ = {
 			isa = PBXGroup;
 			children = (
+				1852DC162BBC589900C883A8 /* Models */,
+				1852DC132BBC560F00C883A8 /* Service */,
+				1852DBF62BBC4E2A00C883A8 /* Core */,
 				1852DBC82BBC0CC700C883A8 /* App */,
 				1852DBC72BBC0CC200C883A8 /* Module */,
 				1852DBD02BBC0F0400C883A8 /* Resources */,
@@ -122,8 +167,8 @@
 			children = (
 				1852DBDE2BBC2AB100C883A8 /* PreloaderAssembly.swift */,
 				1852DBD82BBC1AFC00C883A8 /* View */,
-				1852DBBE2BBC063A00C883A8 /* LaunchScreen.storyboard */,
 				1852DBD72BBC1AD900C883A8 /* Resources */,
+				1852DBBE2BBC063A00C883A8 /* LaunchScreen.storyboard */,
 			);
 			path = Preloader;
 			sourceTree = "<group>";
@@ -207,6 +252,96 @@
 				1852DBF02BBC38D400C883A8 /* Colors.xcassets */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		1852DBF62BBC4E2A00C883A8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBF72BBC4E2D00C883A8 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1852DBF72BBC4E2D00C883A8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBF82BBC4E3E00C883A8 /* NetworkAssembly.swift */,
+				1852DBFC2BBC4E5200C883A8 /* Executor */,
+				1852DBFA2BBC4E4100C883A8 /* Builder */,
+				1852DBFB2BBC4E4D00C883A8 /* Component */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1852DBFA2BBC4E4100C883A8 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC0B2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift */,
+				1852DC092BBC4F8F00C883A8 /* HTTPRequestModel.swift */,
+				1852DC0D2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift */,
+				1852DC0F2BBC542F00C883A8 /* HTTPRequestBuilder.swift */,
+				1852DC112BBC548200C883A8 /* HTTPRequestBuilderError.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		1852DBFB2BBC4E4D00C883A8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC032BBC4EDE00C883A8 /* HTTPMethod.swift */,
+				1852DC052BBC4EE700C883A8 /* HTTPPath.swift */,
+				1852DC072BBC4EF100C883A8 /* HTTPRequest.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		1852DBFC2BBC4E5200C883A8 /* Executor */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBFD2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift */,
+				1852DBFF2BBC4EAC00C883A8 /* HTTPRequestExecutor.swift */,
+				1852DC012BBC4EC300C883A8 /* NetworkError.swift */,
+			);
+			path = Executor;
+			sourceTree = "<group>";
+		};
+		1852DC132BBC560F00C883A8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */,
+				1852DC142BBC562000C883A8 /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1852DC162BBC589900C883A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC202BBC5B8D00C883A8 /* Business */,
+				1852DC172BBC589C00C883A8 /* BE */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1852DC172BBC589C00C883A8 /* BE */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC252BBC683400C883A8 /* PhotosResponse.swift */,
+				1852DC182BBC593D00C883A8 /* PhotoResponse.swift */,
+				1852DC1A2BBC5B3B00C883A8 /* RoverResponse.swift */,
+				1852DC1C2BBC5B4700C883A8 /* CameraResponse.swift */,
+				1852DC1E2BBC5B4F00C883A8 /* CameraInfoResponse.swift */,
+			);
+			path = BE;
+			sourceTree = "<group>";
+		};
+		1852DC202BBC5B8D00C883A8 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC212BBC5BAB00C883A8 /* Photo.swift */,
+				1852DC272BBC68C700C883A8 /* RoverType.swift */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 		247C6B07B4A39C14390A0C07 /* Pods */ = {
@@ -344,18 +479,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1852DC0E2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift in Sources */,
+				1852DC022BBC4EC300C883A8 /* NetworkError.swift in Sources */,
 				1852DBE32BBC2FD000C883A8 /* UIView.swift in Sources */,
+				1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */,
+				1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */,
+				1852DC062BBC4EE700C883A8 /* HTTPPath.swift in Sources */,
+				1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */,
 				1852DBEA2BBC34BA00C883A8 /* Font.swift in Sources */,
 				1852DBE12BBC2AEE00C883A8 /* HomeAssembly.swift in Sources */,
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
+				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
 				1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */,
+				1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */,
+				1852DC102BBC542F00C883A8 /* HTTPRequestBuilder.swift in Sources */,
+				1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */,
+				1852DC0A2BBC4F8F00C883A8 /* HTTPRequestModel.swift in Sources */,
 				1852DBF52BBC3F8100C883A8 /* HomeViewModelProtocol.swift in Sources */,
+				1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */,
 				1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */,
+				1852DC222BBC5BAB00C883A8 /* Photo.swift in Sources */,
+				1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */,
+				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
+				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
+				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,
+				1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */,
 				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,
+				1852DC1F2BBC5B4F00C883A8 /* CameraInfoResponse.swift in Sources */,
+				1852DC082BBC4EF100C883A8 /* HTTPRequest.swift in Sources */,
 				1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */,
+				1852DC152BBC562000C883A8 /* NetworkService.swift in Sources */,
 				1852DBD42BBC13C800C883A8 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

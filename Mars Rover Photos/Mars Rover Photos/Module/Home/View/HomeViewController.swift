@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class HomeViewController: UIViewController {
 
@@ -117,18 +118,38 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
+    private var fakeLaunchScreen: UIViewController?
+    private var cancellables: Set<AnyCancellable> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
-        setConstraints()
-        configureView()
+        configure()
         showPreloader()
+        fetchData()
+    }
+}
+
+// MARK: - UITableViewController
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfElements ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 }
 
 // MARK: - Private
 
 private extension HomeViewController {
+    func configure() {
+        addSubviews()
+        setConstraints()
+        configureView()
+    }
+    
     func addSubviews() {
         view.addSubview(headerView)
         headerView.addSubview(headerTitleLabel)
@@ -176,11 +197,11 @@ private extension HomeViewController {
         }
         
         saveButton.snp.makeConstraints { make in
-            make.trailing.bottom.equalToSuperview().inset(20)
-            make.leading.equalTo(cameraButton.snp.trailing).inset(-23)
             make.width.height.equalTo(38)
+            make.centerX.equalTo(dateButton)
+            make.centerY.equalTo(cameraButton)
         }
-        
+
         tableView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
@@ -198,7 +219,26 @@ private extension HomeViewController {
     }
     
     func showPreloader() {
-        let view = PreloaderAssembly.preloaderController()
-        self.displayController(view, frame: self.view.bounds)
+        let fakeLoader = PreloaderAssembly.preloaderController()
+        fakeLaunchScreen = fakeLoader
+        self.displayController(fakeLoader, frame: self.view.bounds)
+    }
+    
+    func hidePreloader() {
+        self.hideController(fakeLaunchScreen)
+        fakeLaunchScreen = nil
+    }
+    
+    func fetchData() {
+        viewModel?.models
+            .sink(receiveCompletion: { [weak self] error in
+                self?.tableView.reloadData()
+                self?.hidePreloader()
+            }, receiveValue: { [weak self] obj in
+                self?.tableView.reloadData()
+                self?.hidePreloader()
+            })
+            .store(in: &cancellables)
+        viewModel?.fetchPhotos()
     }
 }
