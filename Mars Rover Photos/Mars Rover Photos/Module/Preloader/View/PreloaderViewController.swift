@@ -15,8 +15,15 @@ final class PreloaderViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = Color.accentOne.value
         view.layer.cornerRadius = 30
+        view.clipsToBounds = false
         view.layer.borderColor = Color.layerOne.cgValue
         view.layer.borderWidth = 1
+        view.dropShadow(
+            color: Color.layerOne.value,
+            alpha: 0.1,
+            opacity: 0.55,
+            offset: .init(width: 0, height: 20)
+        )
         return view
     }()
     
