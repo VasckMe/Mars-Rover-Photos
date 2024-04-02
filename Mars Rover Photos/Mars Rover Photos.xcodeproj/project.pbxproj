@@ -13,6 +13,10 @@
 		1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBBC2BBC063A00C883A8 /* Assets.xcassets */; };
 		1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBBE2BBC063A00C883A8 /* LaunchScreen.storyboard */; };
 		1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBCC2BBC0E2000C883A8 /* HomeViewController.swift */; };
+		1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBD12BBC101F00C883A8 /* PreloaderViewController.swift */; };
+		1852DBD42BBC13C800C883A8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBD32BBC13C800C883A8 /* Color.swift */; };
+		1852DBD62BBC162B00C883A8 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBD52BBC162B00C883A8 /* loader.json */; };
+		1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBDC2BBC273D00C883A8 /* UIViewController.swift */; };
 		A79CD3DCA07F5F71C3685150 /* Pods_Mars_Rover_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		1852DBBF2BBC063A00C883A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1852DBC12BBC063A00C883A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852DBCC2BBC0E2000C883A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1852DBD12BBC101F00C883A8 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
+		1852DBD32BBC13C800C883A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1852DBD52BBC162B00C883A8 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		1852DBDC2BBC273D00C883A8 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		500C5ED3F7491B8CEB137003 /* Pods-Mars Rover Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.release.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.release.xcconfig"; sourceTree = "<group>"; };
 		7623EA84D4FFF09ADD328160 /* Pods-Mars Rover Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.debug.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.debug.xcconfig"; sourceTree = "<group>"; };
 		A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mars_Rover_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +74,7 @@
 				1852DBC82BBC0CC700C883A8 /* App */,
 				1852DBC72BBC0CC200C883A8 /* Module */,
 				1852DBD02BBC0F0400C883A8 /* Resources */,
+				1852DBDB2BBC273300C883A8 /* Extension */,
 				1852DBC12BBC063A00C883A8 /* Info.plist */,
 				1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */,
 			);
@@ -93,7 +102,9 @@
 		1852DBC92BBC0CEF00C883A8 /* Preloader */ = {
 			isa = PBXGroup;
 			children = (
+				1852DBD82BBC1AFC00C883A8 /* View */,
 				1852DBBE2BBC063A00C883A8 /* LaunchScreen.storyboard */,
+				1852DBD72BBC1AD900C883A8 /* Resources */,
 			);
 			path = Preloader;
 			sourceTree = "<group>";
@@ -126,8 +137,33 @@
 			isa = PBXGroup;
 			children = (
 				1852DBBC2BBC063A00C883A8 /* Assets.xcassets */,
+				1852DBD32BBC13C800C883A8 /* Color.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1852DBD72BBC1AD900C883A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBD52BBC162B00C883A8 /* loader.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1852DBD82BBC1AFC00C883A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBD12BBC101F00C883A8 /* PreloaderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1852DBDB2BBC273300C883A8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBDC2BBC273D00C883A8 /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		247C6B07B4A39C14390A0C07 /* Pods */ = {
@@ -209,6 +245,7 @@
 			files = (
 				1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */,
 				1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */,
+				1852DBD62BBC162B00C883A8 /* loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
 				1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */,
 				1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
+				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,
 				1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */,
+				1852DBD42BBC13C800C883A8 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
