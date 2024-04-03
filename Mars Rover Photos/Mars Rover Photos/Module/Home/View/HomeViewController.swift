@@ -97,9 +97,17 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = Color.clear.value
+        tableView.backgroundColor = Color.backgroundOne.value
+        tableView.dataSource = self
+        tableView.register(
+            UINib(nibName: HomeTableViewCell.nibName, bundle: nil),
+            forCellReuseIdentifier: HomeTableViewCell.identifier
+        )
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -137,7 +145,18 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeTableViewCell.identifier
+            ) as? HomeTableViewCell,
+            let model = viewModel?.displayModel(at: indexPath.row)
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.refresh(with: model)
+        
+        return cell
     }
 }
 
@@ -230,11 +249,11 @@ private extension HomeViewController {
     }
     
     func fetchData() {
-        viewModel?.models
-            .sink(receiveCompletion: { [weak self] error in
+        viewModel?.modelPublisher
+            .sink(receiveCompletion: { [weak self] _ in
                 self?.tableView.reloadData()
                 self?.hidePreloader()
-            }, receiveValue: { [weak self] obj in
+            }, receiveValue: { [weak self] _ in
                 self?.tableView.reloadData()
                 self?.hidePreloader()
             })

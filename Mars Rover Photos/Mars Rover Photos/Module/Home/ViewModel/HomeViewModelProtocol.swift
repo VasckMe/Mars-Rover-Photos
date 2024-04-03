@@ -11,4 +11,5 @@ protocol HomeViewModelProtocol {
     var modelPublisher: PassthroughSubject<[Photo], NetworkError> { get }
     var numberOfElements: Int { get }
     func fetchPhotos()
+    func displayModel(at index: Int) -> HomeCellItem?
 }

@@ -47,6 +47,12 @@
 		1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */; };
 		1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC252BBC683400C883A8 /* PhotosResponse.swift */; };
 		1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC272BBC68C700C883A8 /* RoverType.swift */; };
+		1852DC2E2BBC958200C883A8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC2C2BBC958200C883A8 /* HomeTableViewCell.swift */; };
+		1852DC2F2BBC958200C883A8 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1852DC2D2BBC958200C883A8 /* HomeTableViewCell.xib */; };
+		1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC312BBD63E700C883A8 /* HomeCellItem.swift */; };
+		1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC342BBD65C900C883A8 /* HelperUtilities.swift */; };
+		1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC362BBD65DD00C883A8 /* DateFormat.swift */; };
+		1852DC392BBD677400C883A8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC382BBD677400C883A8 /* Array.swift */; };
 		A79CD3DCA07F5F71C3685150 /* Pods_Mars_Rover_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +99,12 @@
 		1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		1852DC252BBC683400C883A8 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
 		1852DC272BBC68C700C883A8 /* RoverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverType.swift; sourceTree = "<group>"; };
+		1852DC2C2BBC958200C883A8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		1852DC2D2BBC958200C883A8 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		1852DC312BBD63E700C883A8 /* HomeCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellItem.swift; sourceTree = "<group>"; };
+		1852DC342BBD65C900C883A8 /* HelperUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUtilities.swift; sourceTree = "<group>"; };
+		1852DC362BBD65DD00C883A8 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		1852DC382BBD677400C883A8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		500C5ED3F7491B8CEB137003 /* Pods-Mars Rover Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.release.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.release.xcconfig"; sourceTree = "<group>"; };
 		7623EA84D4FFF09ADD328160 /* Pods-Mars Rover Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.debug.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.debug.xcconfig"; sourceTree = "<group>"; };
 		A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mars_Rover_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +143,7 @@
 		1852DBAF2BBC063800C883A8 /* Mars Rover Photos */ = {
 			isa = PBXGroup;
 			children = (
+				1852DC332BBD65A700C883A8 /* HelperUtils */,
 				1852DC162BBC589900C883A8 /* Models */,
 				1852DC132BBC560F00C883A8 /* Service */,
 				1852DBF62BBC4E2A00C883A8 /* Core */,
@@ -186,6 +199,7 @@
 		1852DBCE2BBC0EA200C883A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1852DC292BBC954B00C883A8 /* Views */,
 				1852DBCC2BBC0E2000C883A8 /* HomeViewController.swift */,
 			);
 			path = View;
@@ -231,6 +245,7 @@
 			children = (
 				1852DBDC2BBC273D00C883A8 /* UIViewController.swift */,
 				1852DBE22BBC2FD000C883A8 /* UIView.swift */,
+				1852DC382BBD677400C883A8 /* Array.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -317,6 +332,7 @@
 		1852DC162BBC589900C883A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1852DC302BBD634400C883A8 /* Display */,
 				1852DC202BBC5B8D00C883A8 /* Business */,
 				1852DC172BBC589C00C883A8 /* BE */,
 			);
@@ -342,6 +358,32 @@
 				1852DC272BBC68C700C883A8 /* RoverType.swift */,
 			);
 			path = Business;
+			sourceTree = "<group>";
+		};
+		1852DC292BBC954B00C883A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC2C2BBC958200C883A8 /* HomeTableViewCell.swift */,
+				1852DC2D2BBC958200C883A8 /* HomeTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1852DC302BBD634400C883A8 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC312BBD63E700C883A8 /* HomeCellItem.swift */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
+		1852DC332BBD65A700C883A8 /* HelperUtils */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC342BBD65C900C883A8 /* HelperUtilities.swift */,
+				1852DC362BBD65DD00C883A8 /* DateFormat.swift */,
+			);
+			path = HelperUtils;
 			sourceTree = "<group>";
 		};
 		247C6B07B4A39C14390A0C07 /* Pods */ = {
@@ -422,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */,
+				1852DC2F2BBC958200C883A8 /* HomeTableViewCell.xib in Resources */,
 				1852DBED2BBC37AF00C883A8 /* SF-Pro.ttf in Resources */,
 				1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */,
 				1852DBF12BBC38D400C883A8 /* Colors.xcassets in Resources */,
@@ -488,6 +531,7 @@
 				1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */,
 				1852DBEA2BBC34BA00C883A8 /* Font.swift in Sources */,
 				1852DBE12BBC2AEE00C883A8 /* HomeAssembly.swift in Sources */,
+				1852DC392BBD677400C883A8 /* Array.swift in Sources */,
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
@@ -495,14 +539,18 @@
 				1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */,
 				1852DC102BBC542F00C883A8 /* HTTPRequestBuilder.swift in Sources */,
 				1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */,
+				1852DC2E2BBC958200C883A8 /* HomeTableViewCell.swift in Sources */,
 				1852DC0A2BBC4F8F00C883A8 /* HTTPRequestModel.swift in Sources */,
 				1852DBF52BBC3F8100C883A8 /* HomeViewModelProtocol.swift in Sources */,
 				1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */,
 				1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */,
 				1852DC222BBC5BAB00C883A8 /* Photo.swift in Sources */,
 				1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */,
+				1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */,
+				1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */,
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
+				1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
 				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,

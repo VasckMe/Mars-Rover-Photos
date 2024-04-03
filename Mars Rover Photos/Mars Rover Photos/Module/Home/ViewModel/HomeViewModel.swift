@@ -18,6 +18,7 @@ final class HomeViewModel {
     }
     
     var models: [Photo] = []
+    private var displayModels: [HomeCellItem] = []
     
     init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
@@ -27,17 +28,27 @@ final class HomeViewModel {
 // MARK: - HomeViewModelProtocol
 
 extension HomeViewModel: HomeViewModelProtocol {
+    func displayModel(at index: Int) -> HomeCellItem? {
+        guard let viewModel = displayModels[safe: index] else {
+            return nil
+        }
+        
+        return viewModel
+    }
+    
     func fetchPhotos() {
         Task {
             do {
                 let photos = try await networkService.fetchPhotos(rover: .all, camera: nil, date: "2015-06-03")
                 await MainActor.run {
                     models = photos
+                    displayModels = photos.map { HomeCellItem(photo: $0) }
                     modelPublisher.send(photos)
                 }
             } catch {
                 await MainActor.run {
                     models = []
+                    displayModels = []
                     modelPublisher.send(completion: .failure(error as? NetworkError ?? .unknown))
                 }
             }
