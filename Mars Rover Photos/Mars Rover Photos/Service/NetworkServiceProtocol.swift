@@ -7,4 +7,5 @@
 
 protocol NetworkServiceProtocol {
     func fetchPhotos(rover: RoverType, camera: String?, date: String) async throws -> [Photo]
+    var isLoading: Bool { get set }
 }

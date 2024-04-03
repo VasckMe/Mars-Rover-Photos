@@ -7,4 +7,5 @@
 
 enum DateFormat: String {
     case MMMdyyyy = "MMM d, yyyy"
+    case yyyyMMdd = "yyyy-MM-dd"
 }

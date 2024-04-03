@@ -10,6 +10,7 @@ import Foundation
 final class NetworkService {
     private let executor: HTTPRequestExecutorProtocol
     
+    var isLoading: Bool = false
     private var currentPage = 1
     
     init(executor: HTTPRequestExecutorProtocol) {
@@ -21,6 +22,12 @@ final class NetworkService {
 
 extension NetworkService: NetworkServiceProtocol {
     func fetchPhotos(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
+        if isLoading {
+            throw CancellationError()
+        }
+        
+        isLoading = true
+        
         if rover == .all {
             return try await fetchAllphotos(camera: camera, date: date)
         } else {
@@ -30,9 +37,9 @@ extension NetworkService: NetworkServiceProtocol {
     
     func fetchAllphotos(camera: String?, date: String) async throws -> [Photo] {
         do {
-            async let curiosity = fetchPhotos(rover: .curiosity, camera: camera, date: date)
-            async let opportunity = fetchPhotos(rover: .opportunity, camera: camera, date: date)
-            async let spirit = fetchPhotos(rover: .spirit, camera: camera, date: date)
+            async let curiosity = fetch(rover: .curiosity, camera: camera, date: date)
+            async let opportunity = fetch(rover: .opportunity, camera: camera, date: date)
+            async let spirit = fetch(rover: .spirit, camera: camera, date: date)
             
             let curiosityPhotos = try await curiosity
             let opportunityPhotos = try await opportunity
@@ -43,8 +50,11 @@ extension NetworkService: NetworkServiceProtocol {
             combindedPhotos.append(contentsOf: opportunityPhotos)
             combindedPhotos.append(contentsOf: spiritPhotos)
             
+            currentPage += 1
+            isLoading = false
             return combindedPhotos
         } catch {
+            isLoading = false
             throw error
         }
     }
@@ -57,31 +67,30 @@ extension NetworkService: NetworkServiceProtocol {
                 date: date,
                 page: currentPage)
             )
+            currentPage += 1
+            isLoading = false
             return response.photos.map { Photo(response: $0) }
         } catch {
+            isLoading = false
             throw error
         }
     }
-    
-//    func fetchAllPhotos() async throws -> [Photo] {
-//        do {
-//            let response: PhotosResponse = try await executor.execute(request: .getRoverPhotos(
-//                rover: "curiosity",
-//                camera: nil,
-//                date: "2015-06-03",
-//                page: 1)
-//            )
-//            return response.photos.map { Photo(response: $0) }
-//        } catch {
-//            throw error
-//        }
-//    }
 }
 
 // MARK: - Private
 
 private extension NetworkService {
-    func fetch(from rover: RoverType, camera: String, Data: String) {
-        
+    func fetch(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
+        do {
+            let response: PhotosResponse = try await executor.execute(request: .getRoverPhotos(
+                rover: rover.rawValue,
+                camera: camera,
+                date: date,
+                page: currentPage)
+            )
+            return response.photos.map { Photo(response: $0) }
+        } catch {
+            throw error
+        }
     }
 }

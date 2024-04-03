@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Mars_Rover_Photos" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="fcM-vX-0dg" id="m0b-cJ-mxZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zoomView" destination="4sY-sf-h67" id="zJz-71-l0g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-sf-h67" customClass="ZoomView" customModule="Mars_Rover_Photos" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4sY-sf-h67" secondAttribute="height" multiplier="1:1" id="nL0-Xd-Amm"/>
+                    </constraints>
+                </view>
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcM-vX-0dg">
+                    <rect key="frame" x="20" y="73" width="68" height="58"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <buttonConfiguration key="configuration" style="plain" image="closeWhite"/>
+                    <connections>
+                        <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="1qa-Cv-6ob"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fcM-vX-0dg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="1Vb-Hv-92C"/>
+                <constraint firstItem="fcM-vX-0dg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5Bs-RG-eo4"/>
+                <constraint firstItem="4sY-sf-h67" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8ne-P8-AO2"/>
+                <constraint firstItem="4sY-sf-h67" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wka-eg-6dp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4sY-sf-h67" secondAttribute="trailing" id="kdI-Zg-pxs"/>
+            </constraints>
+            <point key="canvasLocation" x="83" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeWhite" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

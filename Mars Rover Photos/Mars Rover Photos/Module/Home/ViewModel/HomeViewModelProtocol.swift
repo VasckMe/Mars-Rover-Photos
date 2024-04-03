@@ -9,7 +9,11 @@ import Combine
 
 protocol HomeViewModelProtocol {
     var modelPublisher: PassthroughSubject<[Photo], NetworkError> { get }
+    var showIndicatorPublisher: PassthroughSubject<Bool, Never> { get }
     var numberOfElements: Int { get }
-    func fetchPhotos()
-    func displayModel(at index: Int) -> HomeCellItem?
+    
+    func didTriggerViewLoad()
+    func didTriggerReachEndOfList()
+    func didTriggerSelectItem(at index: Int)
+    func displayModel(at index: Int) -> HomeCellItem?    
 }

@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeTableViewCell: UITableViewCell {
-
     static let nibName = "HomeTableViewCell"
     static let identifier = "HomeTableViewCell"
+    
+    // MARK: Outlets
     
     @IBOutlet private weak var shadowView: UIView! {
         didSet {
@@ -31,13 +33,22 @@ final class HomeTableViewCell: UITableViewCell {
     @IBOutlet private weak var roverLabel: UILabel!
     @IBOutlet private weak var cameraLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var photoImageView: UIImageView!
+    @IBOutlet private weak var photoImageView: ContentImageView! {
+        didSet {
+            photoImageView.layer.cornerRadius = 20
+            photoImageView.contentMode = .scaleAspectFill
+            photoImageView.translatesAutoresizingMaskIntoConstraints = false
+            photoImageView.clipsToBounds = true
+            photoImageView.kf.indicatorType = .activity
+        }
+    }
+    
+    // MARK: Life cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configure()
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         roverLabel.text = nil
@@ -46,20 +57,16 @@ final class HomeTableViewCell: UITableViewCell {
         photoImageView.image = nil
     }
     
-    // MARK: Methoss
+    // MARK: Methods
     
     func refresh(with displayModel: HomeCellItem) {
         self.roverLabel.text = displayModel.rover
         self.cameraLabel.text = displayModel.camera
-        self.dateLabel.text = displayModel.date
-//        self.photoImageView = viewModel.
+        self.dateLabel.text = displayModel.formattedDate
+        photoImageView.load(imageURL: displayModel.imageStringURL, placeholder: nil)
     }
-}
-
-// MARK: - HomeTableViewCell
-
-private extension HomeTableViewCell {
-    func configure() {
-        
+    
+    func cancelDownloadTask() {
+        photoImageView.kf.cancelDownloadTask()
     }
 }

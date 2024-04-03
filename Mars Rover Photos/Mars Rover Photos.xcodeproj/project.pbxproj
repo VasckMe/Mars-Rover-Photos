@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18239E532BBDAA2500AC5A98 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18239E522BBDAA2500AC5A98 /* DetailViewController.xib */; };
+		18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E562BBDAD2200AC5A98 /* HomeRouter.swift */; };
+		18239E5B2BBDAEC100AC5A98 /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E5A2BBDAEC100AC5A98 /* DetailAssembly.swift */; };
+		18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E5D2BBDAFE400AC5A98 /* DetailRouter.swift */; };
+		18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E612BBDB05200AC5A98 /* DetailRouterProtocol.swift */; };
+		18239E642BBDB69100AC5A98 /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E632BBDB69100AC5A98 /* ZoomView.swift */; };
 		1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB02BBC063800C883A8 /* AppDelegate.swift */; };
 		1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB22BBC063800C883A8 /* SceneDelegate.swift */; };
 		1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */; };
@@ -53,10 +59,21 @@
 		1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC342BBD65C900C883A8 /* HelperUtilities.swift */; };
 		1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC362BBD65DD00C883A8 /* DateFormat.swift */; };
 		1852DC392BBD677400C883A8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC382BBD677400C883A8 /* Array.swift */; };
+		1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */; };
+		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
+		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
+		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
+		18943DCE2BBDA99300EE27CB /* DetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCD2BBDA99300EE27CB /* DetailViewModelProtocol.swift */; };
 		A79CD3DCA07F5F71C3685150 /* Pods_Mars_Rover_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18239E522BBDAA2500AC5A98 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		18239E562BBDAD2200AC5A98 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		18239E5A2BBDAEC100AC5A98 /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
+		18239E5D2BBDAFE400AC5A98 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		18239E612BBDB05200AC5A98 /* DetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterProtocol.swift; sourceTree = "<group>"; };
+		18239E632BBDB69100AC5A98 /* ZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		1852DBAD2BBC063800C883A8 /* Mars Rover Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Rover Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852DBB02BBC063800C883A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1852DBB22BBC063800C883A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +122,11 @@
 		1852DC342BBD65C900C883A8 /* HelperUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUtilities.swift; sourceTree = "<group>"; };
 		1852DC362BBD65DD00C883A8 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		1852DC382BBD677400C883A8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentImageView.swift; sourceTree = "<group>"; };
+		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
+		18943DCD2BBDA99300EE27CB /* DetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		500C5ED3F7491B8CEB137003 /* Pods-Mars Rover Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.release.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.release.xcconfig"; sourceTree = "<group>"; };
 		7623EA84D4FFF09ADD328160 /* Pods-Mars Rover Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mars Rover Photos.debug.xcconfig"; path = "Target Support Files/Pods-Mars Rover Photos/Pods-Mars Rover Photos.debug.xcconfig"; sourceTree = "<group>"; };
 		A761656D53D5282D286AD0EC /* Pods_Mars_Rover_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mars_Rover_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +144,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18239E512BBDAA2500AC5A98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18943DC42BBDA69700EE27CB /* DetailViewController.swift */,
+				18239E522BBDAA2500AC5A98 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18239E542BBDAA3600AC5A98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18239E552BBDAD0800AC5A98 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				18239E562BBDAD2200AC5A98 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		18239E5C2BBDAFD800AC5A98 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				18239E612BBDB05200AC5A98 /* DetailRouterProtocol.swift */,
+				18239E5D2BBDAFE400AC5A98 /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		1852DBA42BBC063800C883A8 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +199,7 @@
 		1852DBAF2BBC063800C883A8 /* Mars Rover Photos */ = {
 			isa = PBXGroup;
 			children = (
+				1852DC3E2BBD70F600C883A8 /* UI */,
 				1852DC332BBD65A700C883A8 /* HelperUtils */,
 				1852DC162BBC589900C883A8 /* Models */,
 				1852DC132BBC560F00C883A8 /* Service */,
@@ -162,6 +219,7 @@
 			children = (
 				1852DBC92BBC0CEF00C883A8 /* Preloader */,
 				1852DBCA2BBC0D1000C883A8 /* Home */,
+				18943DC12BBDA5FB00EE27CB /* Detail */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -192,6 +250,7 @@
 				1852DBE02BBC2AEE00C883A8 /* HomeAssembly.swift */,
 				1852DBCE2BBC0EA200C883A8 /* View */,
 				1852DBCF2BBC0EAA00C883A8 /* ViewModel */,
+				18239E552BBDAD0800AC5A98 /* Router */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -386,6 +445,36 @@
 			path = HelperUtils;
 			sourceTree = "<group>";
 		};
+		1852DC3E2BBD70F600C883A8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */,
+				18239E632BBDB69100AC5A98 /* ZoomView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		18943DC12BBDA5FB00EE27CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				18239E5A2BBDAEC100AC5A98 /* DetailAssembly.swift */,
+				18239E542BBDAA3600AC5A98 /* Model */,
+				18239E512BBDAA2500AC5A98 /* View */,
+				18943DCC2BBDA98700EE27CB /* ViewModel */,
+				18239E5C2BBDAFD800AC5A98 /* Router */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		18943DCC2BBDA98700EE27CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18943DCD2BBDA99300EE27CB /* DetailViewModelProtocol.swift */,
+				18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		247C6B07B4A39C14390A0C07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +555,7 @@
 				1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */,
 				1852DC2F2BBC958200C883A8 /* HomeTableViewCell.xib in Resources */,
 				1852DBED2BBC37AF00C883A8 /* SF-Pro.ttf in Resources */,
+				18239E532BBDAA2500AC5A98 /* DetailViewController.xib in Resources */,
 				1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */,
 				1852DBF12BBC38D400C883A8 /* Colors.xcassets in Resources */,
 				1852DBD62BBC162B00C883A8 /* loader.json in Resources */,
@@ -524,6 +614,8 @@
 			files = (
 				1852DC0E2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift in Sources */,
 				1852DC022BBC4EC300C883A8 /* NetworkError.swift in Sources */,
+				18239E5B2BBDAEC100AC5A98 /* DetailAssembly.swift in Sources */,
+				1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */,
 				1852DBE32BBC2FD000C883A8 /* UIView.swift in Sources */,
 				1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */,
 				1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */,
@@ -531,8 +623,10 @@
 				1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */,
 				1852DBEA2BBC34BA00C883A8 /* Font.swift in Sources */,
 				1852DBE12BBC2AEE00C883A8 /* HomeAssembly.swift in Sources */,
+				18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */,
 				1852DC392BBD677400C883A8 /* Array.swift in Sources */,
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
+				18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
 				1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */,
@@ -551,15 +645,21 @@
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
 				1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */,
+				18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
 				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,
+				18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */,
 				1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */,
 				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,
 				1852DC1F2BBC5B4F00C883A8 /* CameraInfoResponse.swift in Sources */,
+				18239E642BBDB69100AC5A98 /* ZoomView.swift in Sources */,
+				18943DCE2BBDA99300EE27CB /* DetailViewModelProtocol.swift in Sources */,
+				18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */,
 				1852DC082BBC4EF100C883A8 /* HTTPRequest.swift in Sources */,
 				1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */,
 				1852DC152BBC562000C883A8 /* NetworkService.swift in Sources */,
+				18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */,
 				1852DBD42BBC13C800C883A8 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

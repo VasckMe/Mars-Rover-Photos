@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SnapKit
 
 final class HomeViewController: UIViewController {
 
@@ -21,6 +22,7 @@ final class HomeViewController: UIViewController {
             opacity: 0.12,
             offset: .init(width: 0, height: 5)
         )
+        view.clipsToBounds = false
         return view
     }()
     
@@ -101,12 +103,14 @@ final class HomeViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = Color.backgroundOne.value
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(
             UINib(nibName: HomeTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: HomeTableViewCell.identifier
         )
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 162
+        tableView.estimatedRowHeight = 162
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -126,6 +130,12 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
+    private var bottomActivityIndicatorView: UIActivityIndicatorView = {
+        let bottomIndicatorView = UIActivityIndicatorView(style: .medium)
+        bottomIndicatorView.hidesWhenStopped = true
+        bottomIndicatorView.color = Color.accentOne.value
+        return bottomIndicatorView
+    }()
     private var fakeLaunchScreen: UIViewController?
     private var cancellables: Set<AnyCancellable> = []
     
@@ -133,7 +143,8 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configure()
         showPreloader()
-        fetchData()
+        viewModel?.didTriggerViewLoad()
+        bind()
     }
 }
 
@@ -160,6 +171,32 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {
+            return
+        }
+        print("Display: \(indexPath.row)")
+        if indexPath.row == viewModel.numberOfElements - 1 {
+            viewModel.didTriggerReachEndOfList()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? HomeTableViewCell else {
+            return
+        }
+        
+        cell.cancelDownloadTask()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didTriggerSelectItem(at: indexPath.row)
+    }
+}
+
 // MARK: - Private
 
 private extension HomeViewController {
@@ -179,6 +216,7 @@ private extension HomeViewController {
         headerView.addSubview(saveButton)
         view.addSubview(tableView)
         view.addSubview(historyButton)
+        view.addSubview(bottomActivityIndicatorView)
     }
     
     func setConstraints() {
@@ -231,6 +269,11 @@ private extension HomeViewController {
             make.bottom.equalTo(view.layoutMarginsGuide)
             make.height.width.equalTo(70)
         }
+        
+        bottomActivityIndicatorView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.layoutMarginsGuide)
+        }
     }
     
     func configureView() {
@@ -248,7 +291,7 @@ private extension HomeViewController {
         fakeLaunchScreen = nil
     }
     
-    func fetchData() {
+    func bind() {
         viewModel?.modelPublisher
             .sink(receiveCompletion: { [weak self] _ in
                 self?.tableView.reloadData()
@@ -258,6 +301,13 @@ private extension HomeViewController {
                 self?.hidePreloader()
             })
             .store(in: &cancellables)
-        viewModel?.fetchPhotos()
+        
+        viewModel?.showIndicatorPublisher
+            .sink(receiveValue: { [weak self] isActive in
+                isActive
+                ? self?.bottomActivityIndicatorView.startAnimating()
+                : self?.bottomActivityIndicatorView.stopAnimating()
+            })
+            .store(in: &cancellables)
     }
 }

@@ -6,5 +6,6 @@ target 'Mars Rover Photos' do
 
 pod 'SnapKit', '~> 5.7.0'
 pod 'lottie-ios'
+pod 'Kingfisher', '~> 7.0'
 
 end

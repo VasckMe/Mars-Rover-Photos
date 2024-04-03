@@ -10,7 +10,13 @@ import UIKit
 struct HomeAssembly {
     static func homeController() -> UIViewController {
         let view = HomeViewController()
-        let viewModel = HomeViewModel(networkService: NetworkService(executor: NetworkAssembly.requestExecutor))
+        let router = HomeRouter()
+        router.view = view
+        
+        let viewModel = HomeViewModel(
+            networkService: NetworkService(executor: NetworkAssembly.requestExecutor),
+            router: router
+        )
         view.viewModel = viewModel
         return view
     }

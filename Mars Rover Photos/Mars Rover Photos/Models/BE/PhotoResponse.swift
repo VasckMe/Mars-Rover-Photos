@@ -5,6 +5,8 @@
 //  Created by Anton Kasaryn on 2.04.24.
 //
 
+import Foundation
+
 struct PhotoResponse: Decodable {
     let id: Int
     let sol: Int
