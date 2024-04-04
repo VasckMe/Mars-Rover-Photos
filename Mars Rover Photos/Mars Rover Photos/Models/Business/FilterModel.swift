@@ -5,10 +5,12 @@
 //  Created by Anton Kasaryn on 4.04.24.
 //
 
+import Foundation
+
 struct FilterModel {
     let rover: String
     let camera: String
-    let date: String
+    let date: Date
 }
 
 extension FilterModel {
@@ -16,13 +18,19 @@ extension FilterModel {
         guard
             let roverName = model.rover,
             let cameraName = model.camera,
-            let dateString = model.date
+            let date = model.date
         else {
             return nil
         }
         
         self.rover = roverName
         self.camera = cameraName
-        self.date = dateString
+        self.date = date
+    }
+    
+    init(displayModel: FilterDisplayItem) {
+        self.rover = displayModel.rover
+        self.camera = displayModel.camera
+        self.date = displayModel.date
     }
 }

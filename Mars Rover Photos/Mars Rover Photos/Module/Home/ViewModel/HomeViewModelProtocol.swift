@@ -21,8 +21,10 @@ protocol HomeViewModelProtocol {
     var numberOfElements: Int { get }
     
     func didTriggerRoverButton()
+    func didTriggerHistoryButton()
     func didTriggerCameraButton()
     func didTriggerDateButton()
+    func didTriggerSaveButton()
     func didTriggerViewLoad()
     func didTriggerReachEndOfList()
     func didTriggerSelectItem(at index: Int)

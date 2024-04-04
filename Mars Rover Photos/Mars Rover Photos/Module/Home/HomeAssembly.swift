@@ -14,6 +14,7 @@ struct HomeAssembly {
         router.view = view
         
         let viewModel = HomeViewModel(
+            persistenceService: PersistenceService(persistenceManager: PersistenceStorageManager.shared),
             networkService: NetworkService(executor: NetworkAssembly.requestExecutor),
             router: router
         )

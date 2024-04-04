@@ -36,7 +36,6 @@ final class HomeViewController: UIViewController {
     
     private let headerSubtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "June 6, 2019"
         label.font = Font.body2.value
         label.textColor = Color.layerOne.value
         return label
@@ -110,6 +109,7 @@ final class HomeViewController: UIViewController {
             offset: .init(width: 0, height: 4)
         )
         button.clipsToBounds = false
+        button.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -149,6 +149,7 @@ final class HomeViewController: UIViewController {
             offset: .init(width: 0, height: 2)
         )
         button.clipsToBounds = false
+        button.addTarget(self, action: #selector(historyButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -413,5 +414,13 @@ private extension HomeViewController {
     
     @objc func cameraButtonAction() {
         viewModel?.didTriggerCameraButton()
+    }
+    
+    @objc func saveButtonAction() {
+        viewModel?.didTriggerSaveButton()
+    }
+    
+    @objc func historyButtonAction() {
+        viewModel?.didTriggerHistoryButton()
     }
 }

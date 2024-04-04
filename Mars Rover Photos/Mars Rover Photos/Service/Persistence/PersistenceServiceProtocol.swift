@@ -8,4 +8,5 @@
 protocol PersistenceServiceProtocol {
     func saveFilter(_ filter: FilterModel) throws
     func getFilters() throws -> [FilterModel]
+    func removeFilter(_ filter: FilterModel) throws
 }

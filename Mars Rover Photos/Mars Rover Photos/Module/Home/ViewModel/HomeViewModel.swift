@@ -9,9 +9,6 @@ import Foundation
 import Combine
 
 final class HomeViewModel {
-    private var networkService: NetworkServiceProtocol
-    private let router: HomeRouterProtocol
-    
     var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
     var isCenterActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
     var isBottomActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
@@ -27,9 +24,14 @@ final class HomeViewModel {
     }
     
     var models: [Photo] = []
-    private var displayModels: [HomeCellItem] = []
     
-    init(networkService: NetworkServiceProtocol, router: HomeRouterProtocol) {
+    private var displayModels: [HomeCellItem] = []
+    private let persistenceService: PersistenceServiceProtocol
+    private let networkService: NetworkServiceProtocol
+    private let router: HomeRouterProtocol
+    
+    init(persistenceService: PersistenceServiceProtocol, networkService: NetworkServiceProtocol, router: HomeRouterProtocol) {
+        self.persistenceService = persistenceService
         self.networkService = networkService
         self.router = router
     }
@@ -93,6 +95,25 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
     }
     
+    func didTriggerHistoryButton() {
+        router.showFilterHistoryScreen(delegate: self)
+    }
+    
+    func didTriggerSaveButton() {
+        let filter = FilterModel(
+            rover: roverPublisher.value,
+            camera: cameraPublisher.value,
+            date: datePublisher.value
+        )
+        
+        router.showSaveAlert(
+            title: "Save Filters",
+            subtitle: "The current filters and the date you have chosen can be saved to the filter history."
+        ) { [weak self] in
+            try? self?.persistenceService.saveFilter(filter)
+        }
+    }
+    
     func didTriggerViewLoad() {
         fetch()
     }
@@ -107,6 +128,17 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
         
         router.openDetailScreen(input: DetailInputModel(imageStringURL: model.imageStringURL))
+    }
+}
+
+// MARK: - FilterHistoryDelegate
+
+extension HomeViewModel: FilterHistoryDelegate {
+    func use(filter: FilterModel) {
+        roverPublisher.send(filter.rover)
+        cameraPublisher.send(filter.camera)
+        datePublisher.send(filter.date)
+        fetch()
     }
 }
 

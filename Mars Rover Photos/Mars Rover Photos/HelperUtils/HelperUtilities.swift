@@ -20,4 +20,24 @@ struct HelperUtilities {
         let dateString = formatter.string(from: date)
         return dateString
     }
+    
+    static func makeAttributedString(text first: String, text second: String) -> NSMutableAttributedString {
+        let attributes1: [NSAttributedString.Key: Any] = [
+            .font: Font.body.value,
+            .foregroundColor: Color.layerTwo.value
+        ]
+        let attributedString1 = NSAttributedString(string: first, attributes: attributes1)
+
+        let attributes2: [NSAttributedString.Key: Any] = [
+            .font: Font.body2.value,
+            .foregroundColor: Color.layerOne.value
+        ]
+        let attributedString2 = NSAttributedString(string: second, attributes: attributes2)
+        
+        let fullAttributedString = NSMutableAttributedString()
+        fullAttributedString.append(attributedString1)
+        fullAttributedString.append(attributedString2)
+        
+        return fullAttributedString
+    }
 }

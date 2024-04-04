@@ -5,6 +5,8 @@
 //  Created by Anton Kasaryn on 4.04.24.
 //
 
+import Foundation
+
 final class PersistenceService: PersistenceServiceProtocol {
     private let persistenceManager: PersistenceStorageManagerProtocol
     
@@ -23,13 +25,21 @@ final class PersistenceService: PersistenceServiceProtocol {
         } catch {
             throw error
         }
-        
     }
     
     func getFilters() throws -> [FilterModel] {
         do {
             let savedFilters = try self.persistenceManager.retrieveObjects(type: PersistenceFilter.self)
             return savedFilters.compactMap { FilterModel(model: $0) }
+        } catch {
+            throw error
+        }
+    }
+    
+    func removeFilter(_ filter: FilterModel) throws {
+        do {
+            let predicate = NSPredicate(format: "date == %@", filter.date as CVarArg)
+            let savedFilters = try self.persistenceManager.deleteObjects(type: PersistenceFilter.self, predicate: predicate)
         } catch {
             throw error
         }

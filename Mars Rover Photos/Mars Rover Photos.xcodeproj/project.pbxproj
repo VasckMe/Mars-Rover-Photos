@@ -87,6 +87,14 @@
 		1886CFBD2BBF0FEE00E91B17 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFBC2BBF0FEE00E91B17 /* PersistenceService.swift */; };
 		1886CFBF2BBF101800E91B17 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */; };
 		1886CFC12BBF104100E91B17 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC02BBF104100E91B17 /* FilterModel.swift */; };
+		1886CFC42BBF211800E91B17 /* FilterHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC32BBF211800E91B17 /* FilterHistoryViewController.swift */; };
+		1886CFC62BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC52BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift */; };
+		1886CFC82BBF25A200E91B17 /* FilterHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC72BBF25A200E91B17 /* FilterHistoryViewModel.swift */; };
+		1886CFCA2BBF272200E91B17 /* FilterDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC92BBF272200E91B17 /* FilterDisplayItem.swift */; };
+		1886CFCC2BBF281E00E91B17 /* FilterHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFCB2BBF281E00E91B17 /* FilterHistoryRouter.swift */; };
+		1886CFD12BBF299500E91B17 /* FilterHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFCF2BBF299500E91B17 /* FilterHistoryTableViewCell.swift */; };
+		1886CFD22BBF299500E91B17 /* FilterHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */; };
+		1886CFD42BBF2DE600E91B17 /* FilterHistoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */; };
 		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
 		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
 		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
@@ -177,6 +185,14 @@
 		1886CFBC2BBF0FEE00E91B17 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
 		1886CFC02BBF104100E91B17 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		1886CFC32BBF211800E91B17 /* FilterHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryViewController.swift; sourceTree = "<group>"; };
+		1886CFC52BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryViewModelProtocol.swift; sourceTree = "<group>"; };
+		1886CFC72BBF25A200E91B17 /* FilterHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryViewModel.swift; sourceTree = "<group>"; };
+		1886CFC92BBF272200E91B17 /* FilterDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDisplayItem.swift; sourceTree = "<group>"; };
+		1886CFCB2BBF281E00E91B17 /* FilterHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryRouter.swift; sourceTree = "<group>"; };
+		1886CFCF2BBF299500E91B17 /* FilterHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryAssembly.swift; sourceTree = "<group>"; };
 		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
@@ -320,6 +336,7 @@
 		1852DBC72BBC0CC200C883A8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1886CFC22BBF210300E91B17 /* FilterHistory */,
 				182E9EFF2BBEAFA0004CF1DD /* PickerBottomSheet */,
 				1852DBC92BBC0CEF00C883A8 /* Preloader */,
 				1852DBCA2BBC0D1000C883A8 /* Home */,
@@ -542,6 +559,7 @@
 			children = (
 				1852DC312BBD63E700C883A8 /* HomeCellItem.swift */,
 				1886CF992BBEDD0400E91B17 /* PickerDisplayItem.swift */,
+				1886CFC92BBF272200E91B17 /* FilterDisplayItem.swift */,
 			);
 			path = Display;
 			sourceTree = "<group>";
@@ -637,6 +655,36 @@
 				1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		1886CFC22BBF210300E91B17 /* FilterHistory */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */,
+				1886CFCD2BBF296200E91B17 /* View */,
+				1886CFC52BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift */,
+				1886CFC72BBF25A200E91B17 /* FilterHistoryViewModel.swift */,
+				1886CFCB2BBF281E00E91B17 /* FilterHistoryRouter.swift */,
+			);
+			path = FilterHistory;
+			sourceTree = "<group>";
+		};
+		1886CFCD2BBF296200E91B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFCE2BBF296500E91B17 /* Views */,
+				1886CFC32BBF211800E91B17 /* FilterHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1886CFCE2BBF296500E91B17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFCF2BBF299500E91B17 /* FilterHistoryTableViewCell.swift */,
+				1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		18943DC12BBDA5FB00EE27CB /* Detail */ = {
@@ -745,6 +793,7 @@
 				1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */,
 				1852DBF12BBC38D400C883A8 /* Colors.xcassets in Resources */,
 				1852DBD62BBC162B00C883A8 /* loader.json in Resources */,
+				1886CFD22BBF299500E91B17 /* FilterHistoryTableViewCell.xib in Resources */,
 				1852DBEE2BBC37B000C883A8 /* SF-Pro-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1886CFCA2BBF272200E91B17 /* FilterDisplayItem.swift in Sources */,
 				1852DC0E2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift in Sources */,
 				1886CFC12BBF104100E91B17 /* FilterModel.swift in Sources */,
 				1852DC022BBC4EC300C883A8 /* NetworkError.swift in Sources */,
@@ -807,6 +857,7 @@
 				182E9EF32BBDE28B004CF1DD /* DatePopupViewModel.swift in Sources */,
 				1886CFB02BBF0A5400E91B17 /* PlaceholderView.swift in Sources */,
 				1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */,
+				1886CFC42BBF211800E91B17 /* FilterHistoryViewController.swift in Sources */,
 				1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */,
 				1852DC062BBC4EE700C883A8 /* HTTPPath.swift in Sources */,
 				1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */,
@@ -820,6 +871,7 @@
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
 				182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */,
 				18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */,
+				1886CFC82BBF25A200E91B17 /* FilterHistoryViewModel.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
 				1886CFB92BBF0F2700E91B17 /* PersistenceStorageManagerError.swift in Sources */,
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
@@ -840,13 +892,16 @@
 				1886CF9F2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift in Sources */,
 				1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */,
 				1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */,
+				1886CFCC2BBF281E00E91B17 /* FilterHistoryRouter.swift in Sources */,
 				1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */,
 				1886CFB22BBF0CC000E91B17 /* UITableView.swift in Sources */,
 				1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */,
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
+				1886CFD12BBF299500E91B17 /* FilterHistoryTableViewCell.swift in Sources */,
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
 				1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */,
 				1886CFA12BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift in Sources */,
+				1886CFC62BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift in Sources */,
 				1886CFB52BBF0EBD00E91B17 /* PersistenceStorageManager.swift in Sources */,
 				18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
@@ -854,6 +909,7 @@
 				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,
 				182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */,
 				18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */,
+				1886CFD42BBF2DE600E91B17 /* FilterHistoryAssembly.swift in Sources */,
 				1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */,
 				1886CFBF2BBF101800E91B17 /* PersistenceServiceProtocol.swift in Sources */,
 				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,

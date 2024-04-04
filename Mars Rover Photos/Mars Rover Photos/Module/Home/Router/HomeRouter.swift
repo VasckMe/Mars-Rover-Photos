@@ -10,6 +10,8 @@ import UIKit
 protocol HomeRouterProtocol {
     func openDetailScreen(input: DetailInputModel)
     func openDatePopupScreen(delegate: DatePopupDelegate)
+    func showFilterHistoryScreen(delegate: FilterHistoryDelegate)
+    func showSaveAlert(title: String, subtitle: String, completion: @escaping ()->())
 }
 
 final class HomeRouter: HomeRouterProtocol {
@@ -35,5 +37,24 @@ final class HomeRouter: HomeRouterProtocol {
                 
                 view.show()
             })
+    }
+    
+    func showFilterHistoryScreen(delegate: FilterHistoryDelegate) {
+        let filterHistoryScreen = FilterHistoryAssembly.filterHistoryController(delegate: delegate)
+        view?.navigationController?.pushViewController(filterHistoryScreen, animated: true)
+    }
+    
+    func showSaveAlert(title: String, subtitle: String, completion: @escaping () -> ()) {
+        let alertController = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            completion()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        view?.navigationController?.present(alertController, animated: true)
     }
 }

@@ -60,9 +60,18 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: Methods
     
     func refresh(with displayModel: HomeCellItem) {
-        self.roverLabel.text = displayModel.rover
-        self.cameraLabel.text = displayModel.camera
-        self.dateLabel.text = displayModel.formattedDate
+        roverLabel.attributedText = HelperUtilities.makeAttributedString(
+            text: "Rover: ",
+            text: displayModel.rover
+        )
+        cameraLabel.attributedText = HelperUtilities.makeAttributedString(
+            text: "Camera: ",
+            text: displayModel.camera
+        )
+        dateLabel.attributedText = HelperUtilities.makeAttributedString(
+            text: "Date: ",
+            text: displayModel.formattedDate
+        )
         photoImageView.load(imageURL: displayModel.imageStringURL, placeholder: nil)
     }
     
