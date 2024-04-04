@@ -22,6 +22,7 @@
 		182E9EFA2BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EF92BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift */; };
 		182E9EFC2BBDE3CE004CF1DD /* DatePopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EFB2BBDE3CE004CF1DD /* DatePopupRouter.swift */; };
 		182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EFD2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift */; };
+		182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9F002BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift */; };
 		1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB02BBC063800C883A8 /* AppDelegate.swift */; };
 		1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB22BBC063800C883A8 /* SceneDelegate.swift */; };
 		1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */; };
@@ -69,6 +70,15 @@
 		1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC362BBD65DD00C883A8 /* DateFormat.swift */; };
 		1852DC392BBD677400C883A8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC382BBD677400C883A8 /* Array.swift */; };
 		1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */; };
+		1886CF9A2BBEDD0400E91B17 /* PickerDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CF992BBEDD0400E91B17 /* PickerDisplayItem.swift */; };
+		1886CF9F2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CF9E2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift */; };
+		1886CFA12BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA02BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift */; };
+		1886CFA32BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA22BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift */; };
+		1886CFA52BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA42BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift */; };
+		1886CFA72BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA62BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift */; };
+		1886CFA92BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA82BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift */; };
+		1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAB2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift */; };
+		1886CFAE2BBF00E000E91B17 /* CameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAD2BBF00E000E91B17 /* CameraType.swift */; };
 		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
 		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
 		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
@@ -92,6 +102,7 @@
 		182E9EF92BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupRouterProtocol.swift; sourceTree = "<group>"; };
 		182E9EFB2BBDE3CE004CF1DD /* DatePopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupRouter.swift; sourceTree = "<group>"; };
 		182E9EFD2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewControllerProtocol.swift; sourceTree = "<group>"; };
+		182E9F002BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBottomSheetViewController.swift; sourceTree = "<group>"; };
 		1852DBAD2BBC063800C883A8 /* Mars Rover Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Rover Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852DBB02BBC063800C883A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1852DBB22BBC063800C883A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +152,15 @@
 		1852DC362BBD65DD00C883A8 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		1852DC382BBD677400C883A8 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentImageView.swift; sourceTree = "<group>"; };
+		1886CF992BBEDD0400E91B17 /* PickerDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDisplayItem.swift; sourceTree = "<group>"; };
+		1886CF9E2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPickerBottomSheetDelegate.swift; sourceTree = "<group>"; };
+		1886CFA02BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPickerBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		1886CFA22BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBottomSheetViewModelProtocol.swift; sourceTree = "<group>"; };
+		1886CFA42BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBottomSheetDelegate.swift; sourceTree = "<group>"; };
+		1886CFA62BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerBottomSheetDelegate.swift; sourceTree = "<group>"; };
+		1886CFA82BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		1886CFAB2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBottomSheetInputmodel.swift; sourceTree = "<group>"; };
+		1886CFAD2BBF00E000E91B17 /* CameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraType.swift; sourceTree = "<group>"; };
 		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
@@ -236,6 +256,16 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		182E9EFF2BBEAFA0004CF1DD /* PickerBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1886CF982BBEDCF900E91B17 /* Model */,
+				1886CFAA2BBEDE2800E91B17 /* View */,
+				1886CF9B2BBEDD0F00E91B17 /* ViewModel */,
+			);
+			path = PickerBottomSheet;
+			sourceTree = "<group>";
+		};
 		1852DBA42BBC063800C883A8 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +305,7 @@
 		1852DBC72BBC0CC200C883A8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				182E9EFF2BBEAFA0004CF1DD /* PickerBottomSheet */,
 				1852DBC92BBC0CEF00C883A8 /* Preloader */,
 				1852DBCA2BBC0D1000C883A8 /* Home */,
 				18943DC12BBDA5FB00EE27CB /* Detail */,
@@ -474,6 +505,7 @@
 			children = (
 				1852DC212BBC5BAB00C883A8 /* Photo.swift */,
 				1852DC272BBC68C700C883A8 /* RoverType.swift */,
+				1886CFAD2BBF00E000E91B17 /* CameraType.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -491,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				1852DC312BBD63E700C883A8 /* HomeCellItem.swift */,
+				1886CF992BBEDD0400E91B17 /* PickerDisplayItem.swift */,
 			);
 			path = Display;
 			sourceTree = "<group>";
@@ -511,6 +544,51 @@
 				18239E632BBDB69100AC5A98 /* ZoomView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		1886CF982BBEDCF900E91B17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFAB2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1886CF9B2BBEDD0F00E91B17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFA22BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift */,
+				1886CFA42BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift */,
+				1886CF9D2BBEDD1D00E91B17 /* Rover */,
+				1886CF9C2BBEDD1900E91B17 /* Camera */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1886CF9C2BBEDD1900E91B17 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFA62BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift */,
+				1886CFA82BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		1886CF9D2BBEDD1D00E91B17 /* Rover */ = {
+			isa = PBXGroup;
+			children = (
+				1886CF9E2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift */,
+				1886CFA02BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift */,
+			);
+			path = Rover;
+			sourceTree = "<group>";
+		};
+		1886CFAA2BBEDE2800E91B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				182E9F002BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		18943DC12BBDA5FB00EE27CB /* Detail */ = {
@@ -688,7 +766,9 @@
 				1852DBE12BBC2AEE00C883A8 /* HomeAssembly.swift in Sources */,
 				18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */,
 				1852DC392BBD677400C883A8 /* Array.swift in Sources */,
+				1886CFA32BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift in Sources */,
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
+				182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */,
 				18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
@@ -696,19 +776,25 @@
 				1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */,
 				182E9EF02BBDD07B004CF1DD /* DatePopupAssembly.swift in Sources */,
 				1852DC102BBC542F00C883A8 /* HTTPRequestBuilder.swift in Sources */,
+				1886CF9A2BBEDD0400E91B17 /* PickerDisplayItem.swift in Sources */,
 				1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */,
 				1852DC2E2BBC958200C883A8 /* HomeTableViewCell.swift in Sources */,
 				1852DC0A2BBC4F8F00C883A8 /* HTTPRequestModel.swift in Sources */,
 				1852DBF52BBC3F8100C883A8 /* HomeViewModelProtocol.swift in Sources */,
+				1886CFA72BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift in Sources */,
 				1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */,
 				1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */,
+				1886CFA52BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift in Sources */,
 				1852DC222BBC5BAB00C883A8 /* Photo.swift in Sources */,
+				1886CF9F2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift in Sources */,
 				1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */,
 				1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */,
+				1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */,
 				1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */,
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
 				1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */,
+				1886CFA12BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift in Sources */,
 				18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
@@ -722,6 +808,8 @@
 				18943DCE2BBDA99300EE27CB /* DetailViewModelProtocol.swift in Sources */,
 				182E9EF52BBDE295004CF1DD /* DatePopupViewModelProtocol.swift in Sources */,
 				182E9EEE2BBDD05C004CF1DD /* DatePopupViewController.swift in Sources */,
+				1886CFA92BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift in Sources */,
+				1886CFAE2BBF00E000E91B17 /* CameraType.swift in Sources */,
 				18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */,
 				182E9EFA2BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift in Sources */,
 				1852DC082BBC4EF100C883A8 /* HTTPRequest.swift in Sources */,

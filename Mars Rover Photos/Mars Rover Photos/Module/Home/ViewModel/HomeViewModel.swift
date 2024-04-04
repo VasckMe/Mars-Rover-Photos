@@ -13,9 +13,14 @@ final class HomeViewModel {
     private let router: HomeRouterProtocol
     
     var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
-    var showIndicatorPublisher = PassthroughSubject<Bool, Never>()
-    var datePublisher = CurrentValueSubject<Date, Never>(Date())
+    var showIndicatorPublisher = CurrentValueSubject<Bool, Never>(false)
+    var isPickerSheetHidden = CurrentValueSubject<Bool, Never>(true)
+    var pickerSheetViewModel = PassthroughSubject<PickerBottomSheetViewModelProtocol, Never>()
     
+    var datePublisher = CurrentValueSubject<Date, Never>(Date())
+    var roverPublisher = CurrentValueSubject<String, Never>(RoverType.all.rawValue)
+    var cameraPublisher = CurrentValueSubject<String, Never>(CameraType.all.rawValue)
+
     var numberOfElements: Int {
         models.count
     }
@@ -32,6 +37,7 @@ final class HomeViewModel {
 extension HomeViewModel: DatePopupDelegate {
     func save(date: Date) {
         datePublisher.send(date)
+        fetch()
     }
 }
 
@@ -48,6 +54,40 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
         
         return viewModel
+    }
+    
+    func didTriggerRoverButton() {
+        let inputModel = PickerBottomSheetInputmodel(
+            title: "Rover",
+            displayItems: RoverType.allCases.map {PickerDisplayItem(name: $0.rawValue)}
+        )
+        
+        let isPickerHidden = isPickerSheetHidden.value
+        let roverViewModel = RoverPickerBottomSheetViewModel(input: inputModel, delegate: self)
+        
+        if isPickerHidden {
+            pickerSheetViewModel.send(roverViewModel)
+            isPickerSheetHidden.send(!isPickerHidden)
+        } else {
+            pickerSheetViewModel.send(roverViewModel)
+        }        
+    }
+    
+    func didTriggerCameraButton() {
+        let inputModel = PickerBottomSheetInputmodel(
+            title: "Camera",
+            displayItems: CameraType.allCases.map {PickerDisplayItem(name: $0.rawValue)}
+        )
+        
+        let isPickerHidden = isPickerSheetHidden.value
+        let cameraViewModel = CameraPickerBottomSheetViewModel(input: inputModel, delegate: self)
+        
+        if isPickerHidden {
+            pickerSheetViewModel.send(cameraViewModel)
+            isPickerSheetHidden.send(!isPickerHidden)
+        } else {
+            pickerSheetViewModel.send(cameraViewModel)
+        }
     }
     
     func didTriggerViewLoad() {
@@ -67,11 +107,45 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
 }
 
+// MARK: - RoverPickerBottomSheetDelegate
+
+extension HomeViewModel: RoverPickerBottomSheetDelegate {
+    func save(rover: String) {
+        roverPublisher.send(rover)
+        fetch()
+    }
+    
+    func closePickerBottomSheet() {
+        isPickerSheetHidden.send(true)
+    }
+}
+
+// MARK: - CameraPickerBottomSheetDelegate
+
+extension HomeViewModel: CameraPickerBottomSheetDelegate {
+    func save(camera: String) {
+        cameraPublisher.send(camera)
+        fetch()
+    }
+}
+
+// MARK: - Private
+
 private extension HomeViewModel {
     func fetch() {
+        guard
+            let roverType = RoverType(rawValue: roverPublisher.value),
+            let cameraType = CameraType(rawValue: cameraPublisher.value)
+        else {
+            return
+        }
+        
+        let dateString = HelperUtilities.dateFormat(datePublisher.value, to: .yyyyMMdd)
+        let cameraString: String? = cameraType == .all ? nil : cameraType.rawValue
+        
         Task {
             do {
-                let photos = try await networkService.fetchNew(rover: .all, camera: nil, date: "2015-06-03")
+                let photos = try await networkService.fetchNew(rover: roverType, camera: cameraString, date: dateString)
                 await MainActor.run {
                     models = photos
                     displayModels = photos.map { HomeCellItem(photo: $0) }
@@ -94,9 +168,19 @@ private extension HomeViewModel {
         
         showIndicatorPublisher.send(true)
         
+        guard
+            let roverType = RoverType(rawValue: roverPublisher.value),
+            let cameraType = CameraType(rawValue: cameraPublisher.value)
+        else {
+            return
+        }
+        
+        let dateString = HelperUtilities.dateFormat(datePublisher.value, to: .yyyyMMdd)
+        let cameraString: String? = cameraType == .all ? nil : cameraType.rawValue
+        
         Task {
             do {
-                let photos = try await networkService.fetchNext(rover: .all, camera: nil, date: "2015-06-03")
+                let photos = try await networkService.fetchNext(rover: roverType, camera: cameraString, date: dateString)
                 await MainActor.run {
                     models.append(contentsOf: photos)
                     displayModels = models.map { HomeCellItem(photo: $0) }

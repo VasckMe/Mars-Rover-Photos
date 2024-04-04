@@ -51,9 +51,11 @@ final class HomeViewController: UIViewController {
     
     private let roverButton: UIButton = {
         let button = UIButton()
-        button.setTitle("All", for: .normal)
+//        button.setTitle("All", for: .normal)
         button.setImage(UIImage(named: "rover"), for: .normal)
         button.titleLabel?.font = Font.body2.value
+        button.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+        button.contentHorizontalAlignment = .left
         button.setTitleColor(Color.layerOne.value, for: .normal)
         button.backgroundColor = Color.backgroundOne.value
         button.layer.cornerRadius = 10
@@ -64,14 +66,16 @@ final class HomeViewController: UIViewController {
             offset: .init(width: 0, height: 4)
         )
         button.clipsToBounds = false
+        button.addTarget(self, action: #selector(roverButtonAction), for: .touchUpInside)
         return button
     }()
     
     private let cameraButton: UIButton = {
         let button = UIButton()
-        button.setTitle("All", for: .normal)
         button.setImage(UIImage(named: "camera"), for: .normal)
         button.titleLabel?.font = Font.body2.value
+        button.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+        button.contentHorizontalAlignment = .left
         button.setTitleColor(Color.layerOne.value, for: .normal)
         button.backgroundColor = Color.backgroundOne.value
         button.layer.cornerRadius = 10
@@ -82,7 +86,16 @@ final class HomeViewController: UIViewController {
             offset: .init(width: 0, height: 4)
         )
         button.clipsToBounds = false
+        button.addTarget(self, action: #selector(cameraButtonAction), for: .touchUpInside)
         return button
+    }()
+    
+    private let stack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.backgroundColor = Color.clear.value
+        stackView.spacing = 0
+        return stackView
     }()
     
     private let saveButton: UIButton = {
@@ -137,14 +150,17 @@ final class HomeViewController: UIViewController {
         bottomIndicatorView.color = Color.accentOne.value
         return bottomIndicatorView
     }()
+    
+    private var pickerSheetView: PickerBottomSheetViewController?
     private var fakeLaunchScreen: UIViewController?
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
         configure()
+        configurePickerSheet()
         showPreloader()
+        bind()
         viewModel?.didTriggerViewLoad()
     }
 }
@@ -215,7 +231,8 @@ private extension HomeViewController {
         headerView.addSubview(roverButton)
         headerView.addSubview(cameraButton)
         headerView.addSubview(saveButton)
-        view.addSubview(tableView)
+        view.addSubview(stack)
+        stack.addArrangedSubview(tableView)
         view.addSubview(historyButton)
         view.addSubview(bottomActivityIndicatorView)
     }
@@ -260,7 +277,7 @@ private extension HomeViewController {
             make.centerY.equalTo(cameraButton)
         }
 
-        tableView.snp.makeConstraints { make in
+        stack.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
         }
@@ -316,9 +333,52 @@ private extension HomeViewController {
                 self?.headerSubtitleLabel.text = dateString
             })
             .store(in: &cancellables)
+        viewModel?.isPickerSheetHidden
+            .sink(receiveValue: { [weak self] isHidden in
+                self?.animatePickerSheet(isHidden: isHidden)
+            })
+            .store(in: &cancellables)
+        viewModel?.pickerSheetViewModel
+            .sink(receiveValue: { [weak self] viewModel in
+                self?.pickerSheetView?.viewModel = viewModel
+            })
+            .store(in: &cancellables)
+        viewModel?.roverPublisher
+            .sink(receiveValue: { [weak self] rover in
+                self?.roverButton.setTitle(rover, for: .normal)
+            })
+            .store(in: &cancellables)
+        viewModel?.cameraPublisher
+            .sink(receiveValue: { [weak self] camera in
+                self?.cameraButton.setTitle(camera, for: .normal)
+            })
+            .store(in: &cancellables)
+    }
+    
+    func animatePickerSheet(isHidden: Bool) {
+        pickerSheetView?.view.isHidden = isHidden
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func configurePickerSheet() {
+        let bottomSheet = PickerBottomSheetViewController()
+        pickerSheetView = bottomSheet
+        stack.addArrangedSubview(bottomSheet.view)
+        bottomSheet.didMove(toParent: self)
     }
     
     @objc func dateButtonAction() {
         viewModel?.didTriggerDateButton()
+    }
+    
+    @objc func roverButtonAction() {
+        viewModel?.didTriggerRoverButton()
+    }
+    
+    @objc func cameraButtonAction() {
+        viewModel?.didTriggerCameraButton()
     }
 }

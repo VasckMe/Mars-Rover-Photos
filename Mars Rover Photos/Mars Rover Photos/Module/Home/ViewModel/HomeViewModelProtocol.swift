@@ -9,11 +9,18 @@ import Combine
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var modelPublisher: PassthroughSubject<[Photo], NetworkError> { get }
-    var showIndicatorPublisher: PassthroughSubject<Bool, Never> { get }
+    var showIndicatorPublisher: CurrentValueSubject<Bool, Never> { get }
+    var roverPublisher: CurrentValueSubject<String, Never> { get }
+    var cameraPublisher: CurrentValueSubject<String, Never> { get }
     var datePublisher: CurrentValueSubject<Date, Never> { get }
+    var isPickerSheetHidden: CurrentValueSubject<Bool, Never> { get }
+    
+    var modelPublisher: PassthroughSubject<[Photo], NetworkError> { get }
+    var pickerSheetViewModel: PassthroughSubject<PickerBottomSheetViewModelProtocol, Never> { get }
     var numberOfElements: Int { get }
     
+    func didTriggerRoverButton()
+    func didTriggerCameraButton()
     func didTriggerDateButton()
     func didTriggerViewLoad()
     func didTriggerReachEndOfList()

@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum RoverType: String {
-    case all
+enum RoverType: String, CaseIterable {
+    case all = "All"
     case curiosity
     case opportunity
     case spirit
