@@ -27,11 +27,13 @@ final class HomeRouter: HomeRouterProtocol {
             datePopupScreen,
             animated: false,
             completion: {
-                guard let view = datePopupScreen as? DatePopupViewControllerProtocol else {
+                guard
+                    let view = datePopupScreen as? DatePopupViewControllerProtocol
+                else {
                     return
                 }
                 
                 view.show()
-        })
+            })
     }
 }

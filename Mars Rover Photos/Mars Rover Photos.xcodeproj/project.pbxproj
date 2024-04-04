@@ -25,7 +25,7 @@
 		182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9F002BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift */; };
 		1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB02BBC063800C883A8 /* AppDelegate.swift */; };
 		1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB22BBC063800C883A8 /* SceneDelegate.swift */; };
-		1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */; };
+		1852DBBB2BBC063800C883A8 /* Filter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB92BBC063800C883A8 /* Filter.xcdatamodeld */; };
 		1852DBBD2BBC063A00C883A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBBC2BBC063A00C883A8 /* Assets.xcassets */; };
 		1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1852DBBE2BBC063A00C883A8 /* LaunchScreen.storyboard */; };
 		1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBCC2BBC0E2000C883A8 /* HomeViewController.swift */; };
@@ -81,6 +81,12 @@
 		1886CFAE2BBF00E000E91B17 /* CameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAD2BBF00E000E91B17 /* CameraType.swift */; };
 		1886CFB02BBF0A5400E91B17 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAF2BBF0A5400E91B17 /* PlaceholderView.swift */; };
 		1886CFB22BBF0CC000E91B17 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFB12BBF0CC000E91B17 /* UITableView.swift */; };
+		1886CFB52BBF0EBD00E91B17 /* PersistenceStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFB42BBF0EBD00E91B17 /* PersistenceStorageManager.swift */; };
+		1886CFB72BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFB62BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift */; };
+		1886CFB92BBF0F2700E91B17 /* PersistenceStorageManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFB82BBF0F2700E91B17 /* PersistenceStorageManagerError.swift */; };
+		1886CFBD2BBF0FEE00E91B17 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFBC2BBF0FEE00E91B17 /* PersistenceService.swift */; };
+		1886CFBF2BBF101800E91B17 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */; };
+		1886CFC12BBF104100E91B17 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFC02BBF104100E91B17 /* FilterModel.swift */; };
 		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
 		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
 		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
@@ -165,6 +171,12 @@
 		1886CFAD2BBF00E000E91B17 /* CameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraType.swift; sourceTree = "<group>"; };
 		1886CFAF2BBF0A5400E91B17 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		1886CFB12BBF0CC000E91B17 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		1886CFB42BBF0EBD00E91B17 /* PersistenceStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStorageManager.swift; sourceTree = "<group>"; };
+		1886CFB62BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStorageManagerProtocol.swift; sourceTree = "<group>"; };
+		1886CFB82BBF0F2700E91B17 /* PersistenceStorageManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStorageManagerError.swift; sourceTree = "<group>"; };
+		1886CFBC2BBF0FEE00E91B17 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
+		1886CFC02BBF104100E91B17 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
@@ -301,7 +313,6 @@
 				1852DBD02BBC0F0400C883A8 /* Resources */,
 				1852DBDB2BBC273300C883A8 /* Extension */,
 				1852DBC12BBC063A00C883A8 /* Info.plist */,
-				1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */,
 			);
 			path = "Mars Rover Photos";
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 		1852DBF62BBC4E2A00C883A8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1886CFB32BBF0EA100E91B17 /* Persistence */,
 				1852DBF72BBC4E2D00C883A8 /* Network */,
 			);
 			path = Core;
@@ -477,8 +489,8 @@
 		1852DC132BBC560F00C883A8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */,
-				1852DC142BBC562000C883A8 /* NetworkService.swift */,
+				1886CFBB2BBF0FE300E91B17 /* Persistence */,
+				1886CFBA2BBF0FDD00E91B17 /* Network */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -511,6 +523,7 @@
 				1852DC212BBC5BAB00C883A8 /* Photo.swift */,
 				1852DC272BBC68C700C883A8 /* RoverType.swift */,
 				1886CFAD2BBF00E000E91B17 /* CameraType.swift */,
+				1886CFC02BBF104100E91B17 /* FilterModel.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -595,6 +608,35 @@
 				182E9F002BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1886CFB32BBF0EA100E91B17 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				1852DBB92BBC063800C883A8 /* Filter.xcdatamodeld */,
+				1886CFB42BBF0EBD00E91B17 /* PersistenceStorageManager.swift */,
+				1886CFB62BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift */,
+				1886CFB82BBF0F2700E91B17 /* PersistenceStorageManagerError.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		1886CFBA2BBF0FDD00E91B17 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1852DC232BBC5DA600C883A8 /* NetworkServiceProtocol.swift */,
+				1852DC142BBC562000C883A8 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1886CFBB2BBF0FE300E91B17 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFBC2BBF0FEE00E91B17 /* PersistenceService.swift */,
+				1886CFBE2BBF101800E91B17 /* PersistenceServiceProtocol.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		18943DC12BBDA5FB00EE27CB /* Detail */ = {
@@ -757,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1852DC0E2BBC542000C883A8 /* HTTPRequestBuilderProtocol.swift in Sources */,
+				1886CFC12BBF104100E91B17 /* FilterModel.swift in Sources */,
 				1852DC022BBC4EC300C883A8 /* NetworkError.swift in Sources */,
 				18239E5B2BBDAEC100AC5A98 /* DetailAssembly.swift in Sources */,
 				1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */,
@@ -778,6 +821,7 @@
 				182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */,
 				18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */,
 				1852DBDD2BBC273D00C883A8 /* UIViewController.swift in Sources */,
+				1886CFB92BBF0F2700E91B17 /* PersistenceStorageManagerError.swift in Sources */,
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
 				1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */,
 				1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */,
@@ -790,7 +834,7 @@
 				1852DBF52BBC3F8100C883A8 /* HomeViewModelProtocol.swift in Sources */,
 				1886CFA72BBEDDDB00E91B17 /* CameraPickerBottomSheetDelegate.swift in Sources */,
 				1852DC282BBC68C700C883A8 /* RoverType.swift in Sources */,
-				1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */,
+				1852DBBB2BBC063800C883A8 /* Filter.xcdatamodeld in Sources */,
 				1886CFA52BBEDD8D00E91B17 /* PickerBottomSheetDelegate.swift in Sources */,
 				1852DC222BBC5BAB00C883A8 /* Photo.swift in Sources */,
 				1886CF9F2BBEDD3200E91B17 /* RoverPickerBottomSheetDelegate.swift in Sources */,
@@ -803,6 +847,7 @@
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
 				1852DC322BBD63E700C883A8 /* HomeCellItem.swift in Sources */,
 				1886CFA12BBEDD4700E91B17 /* RoverPickerBottomSheetViewModel.swift in Sources */,
+				1886CFB52BBF0EBD00E91B17 /* PersistenceStorageManager.swift in Sources */,
 				18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */,
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
@@ -810,9 +855,11 @@
 				182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */,
 				18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */,
 				1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */,
+				1886CFBF2BBF101800E91B17 /* PersistenceServiceProtocol.swift in Sources */,
 				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,
 				1852DC1F2BBC5B4F00C883A8 /* CameraInfoResponse.swift in Sources */,
 				18239E642BBDB69100AC5A98 /* ZoomView.swift in Sources */,
+				1886CFBD2BBF0FEE00E91B17 /* PersistenceService.swift in Sources */,
 				18943DCE2BBDA99300EE27CB /* DetailViewModelProtocol.swift in Sources */,
 				182E9EF52BBDE295004CF1DD /* DatePopupViewModelProtocol.swift in Sources */,
 				182E9EEE2BBDD05C004CF1DD /* DatePopupViewController.swift in Sources */,
@@ -825,6 +872,7 @@
 				1852DC152BBC562000C883A8 /* NetworkService.swift in Sources */,
 				18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */,
 				1852DBD42BBC13C800C883A8 /* Color.swift in Sources */,
+				1886CFB72BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,13 +1090,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */ = {
+		1852DBB92BBC063800C883A8 /* Filter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				1852DBBA2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodel */,
 			);
 			currentVersion = 1852DBBA2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodel */;
-			path = Mars_Rover_Photos.xcdatamodeld;
+			path = Filter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
