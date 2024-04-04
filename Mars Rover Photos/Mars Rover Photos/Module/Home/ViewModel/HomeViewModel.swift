@@ -13,7 +13,8 @@ final class HomeViewModel {
     private let router: HomeRouterProtocol
     
     var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
-    var showIndicatorPublisher = CurrentValueSubject<Bool, Never>(false)
+    var isCenterActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
+    var isBottomActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
     var isPickerSheetHidden = CurrentValueSubject<Bool, Never>(true)
     var pickerSheetViewModel = PassthroughSubject<PickerBottomSheetViewModelProtocol, Never>()
     
@@ -33,6 +34,8 @@ final class HomeViewModel {
         self.router = router
     }
 }
+
+// MARK: - DatePopupDelegate
 
 extension HomeViewModel: DatePopupDelegate {
     func save(date: Date) {
@@ -133,6 +136,8 @@ extension HomeViewModel: CameraPickerBottomSheetDelegate {
 
 private extension HomeViewModel {
     func fetch() {
+        isCenterActiityIndicatorHiddenPublisher.send(false)
+        
         guard
             let roverType = RoverType(rawValue: roverPublisher.value),
             let cameraType = CameraType(rawValue: cameraPublisher.value)
@@ -150,12 +155,14 @@ private extension HomeViewModel {
                     models = photos
                     displayModels = photos.map { HomeCellItem(photo: $0) }
                     modelPublisher.send(photos)
+                    isCenterActiityIndicatorHiddenPublisher.send(true)
                 }
             } catch {
                 await MainActor.run {
                     models = []
                     displayModels = []
                     modelPublisher.send(completion: .failure(error as? NetworkError ?? .unknown))
+                    isCenterActiityIndicatorHiddenPublisher.send(true)
                 }
             }
         }
@@ -166,7 +173,7 @@ private extension HomeViewModel {
             return
         }
         
-        showIndicatorPublisher.send(true)
+        isBottomActiityIndicatorHiddenPublisher.send(false)
         
         guard
             let roverType = RoverType(rawValue: roverPublisher.value),
@@ -185,14 +192,14 @@ private extension HomeViewModel {
                     models.append(contentsOf: photos)
                     displayModels = models.map { HomeCellItem(photo: $0) }
                     modelPublisher.send(models)
-                    showIndicatorPublisher.send(false)
+                    isBottomActiityIndicatorHiddenPublisher.send(true)
                 }
             } catch {
                 await MainActor.run {
                     models = []
                     displayModels = []
                     modelPublisher.send(completion: .failure(error as? NetworkError ?? .unknown))
-                    showIndicatorPublisher.send(false)
+                    isBottomActiityIndicatorHiddenPublisher.send(true)
                 }
             }
         }

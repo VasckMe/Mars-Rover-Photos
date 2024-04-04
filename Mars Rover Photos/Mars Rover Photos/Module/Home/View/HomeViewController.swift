@@ -113,6 +113,14 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
+    private let tableViewPlaceholderLabel: UILabel = {
+        let label = UILabel()
+        label.text = "MARS.CAMERA"
+        label.textColor = Color.layerTwo.value
+        label.font = Font.body.value
+        return label
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Color.backgroundOne.value
@@ -151,6 +159,13 @@ final class HomeViewController: UIViewController {
         return bottomIndicatorView
     }()
     
+    private var centerActivityIndicatorView: UIActivityIndicatorView = {
+        let bottomIndicatorView = UIActivityIndicatorView(style: .medium)
+        bottomIndicatorView.hidesWhenStopped = true
+        bottomIndicatorView.color = Color.accentOne.value
+        return bottomIndicatorView
+    }()
+
     private var pickerSheetView: PickerBottomSheetViewController?
     private var fakeLaunchScreen: UIViewController?
     private var cancellables: Set<AnyCancellable> = []
@@ -234,6 +249,7 @@ private extension HomeViewController {
         view.addSubview(stack)
         stack.addArrangedSubview(tableView)
         view.addSubview(historyButton)
+        view.addSubview(centerActivityIndicatorView)
         view.addSubview(bottomActivityIndicatorView)
     }
     
@@ -288,6 +304,10 @@ private extension HomeViewController {
             make.height.width.equalTo(70)
         }
         
+        centerActivityIndicatorView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+        }
+        
         bottomActivityIndicatorView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.layoutMarginsGuide)
@@ -312,19 +332,32 @@ private extension HomeViewController {
     func bind() {
         viewModel?.modelPublisher
             .sink(receiveCompletion: { [weak self] _ in
+                self?.tableView.setNoDataPlaceholder("Error")
                 self?.tableView.reloadData()
                 self?.hidePreloader()
-            }, receiveValue: { [weak self] _ in
+            }, receiveValue: { [weak self] photos in
+                if photos.isEmpty {
+                    self?.tableView.setNoDataPlaceholder("No data")
+                } else {
+                    self?.tableView.removeNoDataPlaceholder()
+                }
                 self?.tableView.reloadData()
                 self?.hidePreloader()
             })
             .store(in: &cancellables)
+        viewModel?.isCenterActiityIndicatorHiddenPublisher
+            .sink(receiveValue: { [weak self] isHidden in
+                isHidden
+                    ? self?.centerActivityIndicatorView.stopAnimating()
+                    : self?.centerActivityIndicatorView.startAnimating()
+            })
+            .store(in: &cancellables)
         
-        viewModel?.showIndicatorPublisher
-            .sink(receiveValue: { [weak self] isActive in
-                isActive
-                ? self?.bottomActivityIndicatorView.startAnimating()
-                : self?.bottomActivityIndicatorView.stopAnimating()
+        viewModel?.isBottomActiityIndicatorHiddenPublisher
+            .sink(receiveValue: { [weak self] isHidden in
+                isHidden
+                    ? self?.bottomActivityIndicatorView.stopAnimating()
+                    : self?.bottomActivityIndicatorView.startAnimating()
             })
             .store(in: &cancellables)
         viewModel?.datePublisher

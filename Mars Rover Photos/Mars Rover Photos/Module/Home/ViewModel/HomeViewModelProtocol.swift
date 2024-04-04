@@ -9,7 +9,8 @@ import Combine
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var showIndicatorPublisher: CurrentValueSubject<Bool, Never> { get }
+    var isCenterActiityIndicatorHiddenPublisher: CurrentValueSubject<Bool, Never> { get }
+    var isBottomActiityIndicatorHiddenPublisher: CurrentValueSubject<Bool, Never> { get }
     var roverPublisher: CurrentValueSubject<String, Never> { get }
     var cameraPublisher: CurrentValueSubject<String, Never> { get }
     var datePublisher: CurrentValueSubject<Date, Never> { get }

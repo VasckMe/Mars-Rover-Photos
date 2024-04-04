@@ -79,6 +79,8 @@
 		1886CFA92BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFA82BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift */; };
 		1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAB2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift */; };
 		1886CFAE2BBF00E000E91B17 /* CameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAD2BBF00E000E91B17 /* CameraType.swift */; };
+		1886CFB02BBF0A5400E91B17 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFAF2BBF0A5400E91B17 /* PlaceholderView.swift */; };
+		1886CFB22BBF0CC000E91B17 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFB12BBF0CC000E91B17 /* UITableView.swift */; };
 		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
 		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
 		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
@@ -161,6 +163,8 @@
 		1886CFA82BBEDDEF00E91B17 /* CameraPickerBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		1886CFAB2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBottomSheetInputmodel.swift; sourceTree = "<group>"; };
 		1886CFAD2BBF00E000E91B17 /* CameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraType.swift; sourceTree = "<group>"; };
+		1886CFAF2BBF0A5400E91B17 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		1886CFB12BBF0CC000E91B17 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 				1852DBDC2BBC273D00C883A8 /* UIViewController.swift */,
 				1852DBE22BBC2FD000C883A8 /* UIView.swift */,
 				1852DC382BBD677400C883A8 /* Array.swift */,
+				1886CFB12BBF0CC000E91B17 /* UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -542,6 +547,7 @@
 			children = (
 				1852DC3F2BBD70F600C883A8 /* ContentImageView.swift */,
 				18239E632BBDB69100AC5A98 /* ZoomView.swift */,
+				1886CFAF2BBF0A5400E91B17 /* PlaceholderView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -756,6 +762,7 @@
 				1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */,
 				1852DBE32BBC2FD000C883A8 /* UIView.swift in Sources */,
 				182E9EF32BBDE28B004CF1DD /* DatePopupViewModel.swift in Sources */,
+				1886CFB02BBF0A5400E91B17 /* PlaceholderView.swift in Sources */,
 				1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */,
 				1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */,
 				1852DC062BBC4EE700C883A8 /* HTTPPath.swift in Sources */,
@@ -790,6 +797,7 @@
 				1852DC122BBC548200C883A8 /* HTTPRequestBuilderError.swift in Sources */,
 				1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */,
 				1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */,
+				1886CFB22BBF0CC000E91B17 /* UITableView.swift in Sources */,
 				1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */,
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
 				1852DC1D2BBC5B4700C883A8 /* CameraResponse.swift in Sources */,
