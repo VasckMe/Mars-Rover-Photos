@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeRouterProtocol {
     func openDetailScreen(input: DetailInputModel)
+    func openDatePopupScreen(delegate: DatePopupDelegate)
 }
 
 final class HomeRouter: HomeRouterProtocol {
@@ -17,5 +18,20 @@ final class HomeRouter: HomeRouterProtocol {
     func openDetailScreen(input: DetailInputModel) {
         let detailScreen = DetailAssembly.detailController(input: input)
         view?.navigationController?.pushViewController(detailScreen, animated: true)
+    }
+    
+    func openDatePopupScreen(delegate: DatePopupDelegate) {
+        let datePopupScreen = DatePopupAssembly.datePopupController(delegate: delegate)
+        datePopupScreen.modalPresentationStyle = .overFullScreen
+        view?.navigationController?.present(
+            datePopupScreen,
+            animated: false,
+            completion: {
+                guard let view = datePopupScreen as? DatePopupViewControllerProtocol else {
+                    return
+                }
+                
+                view.show()
+        })
     }
 }

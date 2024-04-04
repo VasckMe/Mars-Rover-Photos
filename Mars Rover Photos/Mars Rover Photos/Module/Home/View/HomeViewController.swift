@@ -45,6 +45,7 @@ final class HomeViewController: UIViewController {
     private let dateButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "calendar"), for: .normal)
+        button.addTarget(self, action: #selector(dateButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -141,10 +142,10 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         configure()
         showPreloader()
         viewModel?.didTriggerViewLoad()
-        bind()
     }
 }
 
@@ -309,5 +310,15 @@ private extension HomeViewController {
                 : self?.bottomActivityIndicatorView.stopAnimating()
             })
             .store(in: &cancellables)
+        viewModel?.datePublisher
+            .map { HelperUtilities.dateFormat($0, to: .MMMdyyyy) }
+            .sink(receiveValue: { [weak self] dateString in
+                self?.headerSubtitleLabel.text = dateString
+            })
+            .store(in: &cancellables)
+    }
+    
+    @objc func dateButtonAction() {
+        viewModel?.didTriggerDateButton()
     }
 }

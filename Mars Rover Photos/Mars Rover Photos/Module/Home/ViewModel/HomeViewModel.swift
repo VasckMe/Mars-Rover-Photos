@@ -14,6 +14,7 @@ final class HomeViewModel {
     
     var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
     var showIndicatorPublisher = PassthroughSubject<Bool, Never>()
+    var datePublisher = CurrentValueSubject<Date, Never>(Date())
     
     var numberOfElements: Int {
         models.count
@@ -28,9 +29,19 @@ final class HomeViewModel {
     }
 }
 
+extension HomeViewModel: DatePopupDelegate {
+    func save(date: Date) {
+        datePublisher.send(date)
+    }
+}
+
 // MARK: - HomeViewModelProtocol
 
 extension HomeViewModel: HomeViewModelProtocol {
+    func didTriggerDateButton() {
+        router.openDatePopupScreen(delegate: self)
+    }
+    
     func displayModel(at index: Int) -> HomeCellItem? {
         guard let viewModel = displayModels[safe: index] else {
             return nil
@@ -60,7 +71,7 @@ private extension HomeViewModel {
     func fetch() {
         Task {
             do {
-                let photos = try await networkService.fetchPhotos(rover: .all, camera: nil, date: "2015-06-03")
+                let photos = try await networkService.fetchNew(rover: .all, camera: nil, date: "2015-06-03")
                 await MainActor.run {
                     models = photos
                     displayModels = photos.map { HomeCellItem(photo: $0) }
@@ -85,7 +96,7 @@ private extension HomeViewModel {
         
         Task {
             do {
-                let photos = try await networkService.fetchPhotos(rover: .all, camera: nil, date: "2015-06-03")
+                let photos = try await networkService.fetchNext(rover: .all, camera: nil, date: "2015-06-03")
                 await MainActor.run {
                     models.append(contentsOf: photos)
                     displayModels = models.map { HomeCellItem(photo: $0) }

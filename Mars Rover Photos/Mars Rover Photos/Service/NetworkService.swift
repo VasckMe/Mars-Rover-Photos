@@ -21,74 +21,77 @@ final class NetworkService {
 // MARK: - NetworkServiceProtocol
 
 extension NetworkService: NetworkServiceProtocol {
-    func fetchPhotos(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
+    // TODO: - Make Date instead of String
+    func fetchNew(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
         if isLoading {
             throw CancellationError()
         }
         
         isLoading = true
         
-        if rover == .all {
-            return try await fetchAllphotos(camera: camera, date: date)
-        } else {
-            return try await fetchRoverPhotos(rover: rover, camera: camera, date: date)
-        }
+        currentPage = 1
+        
+        return try await fetchPhotos(rover: rover, camera: camera, date: date, page: currentPage)
     }
     
-    func fetchAllphotos(camera: String?, date: String) async throws -> [Photo] {
-        do {
-            async let curiosity = fetch(rover: .curiosity, camera: camera, date: date)
-            async let opportunity = fetch(rover: .opportunity, camera: camera, date: date)
-            async let spirit = fetch(rover: .spirit, camera: camera, date: date)
-            
-            let curiosityPhotos = try await curiosity
-            let opportunityPhotos = try await opportunity
-            let spiritPhotos = try await spirit
-            
-            var combindedPhotos: [Photo] = []
-            combindedPhotos.append(contentsOf: curiosityPhotos)
-            combindedPhotos.append(contentsOf: opportunityPhotos)
-            combindedPhotos.append(contentsOf: spiritPhotos)
-            
-            currentPage += 1
-            isLoading = false
-            return combindedPhotos
-        } catch {
-            isLoading = false
-            throw error
+    func fetchNext(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
+        if isLoading {
+            throw CancellationError()
         }
-    }
-    
-    func fetchRoverPhotos(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
-        do {
-            let response: PhotosResponse = try await executor.execute(request: .getRoverPhotos(
-                rover: rover.rawValue,
-                camera: camera,
-                date: date,
-                page: currentPage)
-            )
-            currentPage += 1
-            isLoading = false
-            return response.photos.map { Photo(response: $0) }
-        } catch {
-            isLoading = false
-            throw error
-        }
+        
+        isLoading = true
+        
+        return try await fetchPhotos(rover: rover, camera: camera, date: date, page: currentPage)
     }
 }
 
 // MARK: - Private
 
 private extension NetworkService {
-    func fetch(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
+    func fetchPhotos(rover: RoverType, camera: String?, date: String, page: Int) async throws -> [Photo] {
+        do {
+            let result = rover == .all
+                ? try await fetchAll(camera: camera, date: date, page: page)
+                : try await fetch(rover: rover, camera: camera, date: date, page: page)
+            currentPage += 1
+            isLoading = false
+            return result
+        } catch {
+            isLoading = false
+            throw error
+        }
+    }
+    
+    func fetch(rover: RoverType, camera: String?, date: String, page: Int) async throws -> [Photo] {
         do {
             let response: PhotosResponse = try await executor.execute(request: .getRoverPhotos(
                 rover: rover.rawValue,
                 camera: camera,
                 date: date,
-                page: currentPage)
+                page: page)
             )
             return response.photos.map { Photo(response: $0) }
+        } catch {
+            throw error
+        }
+    }
+    
+    func fetchAll(camera: String?, date: String, page: Int) async throws -> [Photo] {
+        do {
+            async let curiosity = fetch(rover: .curiosity, camera: camera, date: date, page: page)
+            async let opportunity = fetch(rover: .opportunity, camera: camera, date: date, page: page)
+            async let spirit = fetch(rover: .spirit, camera: camera, date: date, page: page)
+            
+            let curiosityPhotos = try await curiosity
+            let opportunityPhotos = try await opportunity
+            let spiritPhotos = try await spirit
+            
+            var combinedPhotos: [Photo] = []
+            combinedPhotos.append(contentsOf: curiosityPhotos)
+            combinedPhotos.append(contentsOf: opportunityPhotos)
+            combinedPhotos.append(contentsOf: spiritPhotos)
+        
+            return combinedPhotos
         } catch {
             throw error
         }

@@ -13,6 +13,15 @@
 		18239E5E2BBDAFE400AC5A98 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E5D2BBDAFE400AC5A98 /* DetailRouter.swift */; };
 		18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E612BBDB05200AC5A98 /* DetailRouterProtocol.swift */; };
 		18239E642BBDB69100AC5A98 /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18239E632BBDB69100AC5A98 /* ZoomView.swift */; };
+		182E9EED2BBDD05C004CF1DD /* DatePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182E9EEB2BBDD05C004CF1DD /* DatePopupViewController.xib */; };
+		182E9EEE2BBDD05C004CF1DD /* DatePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EEC2BBDD05C004CF1DD /* DatePopupViewController.swift */; };
+		182E9EF02BBDD07B004CF1DD /* DatePopupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EEF2BBDD07B004CF1DD /* DatePopupAssembly.swift */; };
+		182E9EF32BBDE28B004CF1DD /* DatePopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EF22BBDE28B004CF1DD /* DatePopupViewModel.swift */; };
+		182E9EF52BBDE295004CF1DD /* DatePopupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EF42BBDE295004CF1DD /* DatePopupViewModelProtocol.swift */; };
+		182E9EF72BBDE2A0004CF1DD /* DatePopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EF62BBDE2A0004CF1DD /* DatePopupDelegate.swift */; };
+		182E9EFA2BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EF92BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift */; };
+		182E9EFC2BBDE3CE004CF1DD /* DatePopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EFB2BBDE3CE004CF1DD /* DatePopupRouter.swift */; };
+		182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E9EFD2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift */; };
 		1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB02BBC063800C883A8 /* AppDelegate.swift */; };
 		1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB22BBC063800C883A8 /* SceneDelegate.swift */; };
 		1852DBBB2BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1852DBB92BBC063800C883A8 /* Mars_Rover_Photos.xcdatamodeld */; };
@@ -74,6 +83,15 @@
 		18239E5D2BBDAFE400AC5A98 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		18239E612BBDB05200AC5A98 /* DetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterProtocol.swift; sourceTree = "<group>"; };
 		18239E632BBDB69100AC5A98 /* ZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
+		182E9EEB2BBDD05C004CF1DD /* DatePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePopupViewController.xib; sourceTree = "<group>"; };
+		182E9EEC2BBDD05C004CF1DD /* DatePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePopupViewController.swift; sourceTree = "<group>"; };
+		182E9EEF2BBDD07B004CF1DD /* DatePopupAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupAssembly.swift; sourceTree = "<group>"; };
+		182E9EF22BBDE28B004CF1DD /* DatePopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewModel.swift; sourceTree = "<group>"; };
+		182E9EF42BBDE295004CF1DD /* DatePopupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewModelProtocol.swift; sourceTree = "<group>"; };
+		182E9EF62BBDE2A0004CF1DD /* DatePopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupDelegate.swift; sourceTree = "<group>"; };
+		182E9EF92BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupRouterProtocol.swift; sourceTree = "<group>"; };
+		182E9EFB2BBDE3CE004CF1DD /* DatePopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupRouter.swift; sourceTree = "<group>"; };
+		182E9EFD2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewControllerProtocol.swift; sourceTree = "<group>"; };
 		1852DBAD2BBC063800C883A8 /* Mars Rover Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Rover Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852DBB02BBC063800C883A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1852DBB22BBC063800C883A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +196,46 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		18239E652BBDC5EB00AC5A98 /* DatePopup */ = {
+			isa = PBXGroup;
+			children = (
+				182E9EEF2BBDD07B004CF1DD /* DatePopupAssembly.swift */,
+				182E9EEA2BBDD05C004CF1DD /* View */,
+				182E9EF12BBDE27F004CF1DD /* ViewModel */,
+				182E9EF82BBDE3B4004CF1DD /* Router */,
+			);
+			path = DatePopup;
+			sourceTree = "<group>";
+		};
+		182E9EEA2BBDD05C004CF1DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				182E9EFD2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift */,
+				182E9EEC2BBDD05C004CF1DD /* DatePopupViewController.swift */,
+				182E9EEB2BBDD05C004CF1DD /* DatePopupViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		182E9EF12BBDE27F004CF1DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				182E9EF42BBDE295004CF1DD /* DatePopupViewModelProtocol.swift */,
+				182E9EF22BBDE28B004CF1DD /* DatePopupViewModel.swift */,
+				182E9EF62BBDE2A0004CF1DD /* DatePopupDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		182E9EF82BBDE3B4004CF1DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				182E9EF92BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift */,
+				182E9EFB2BBDE3CE004CF1DD /* DatePopupRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		1852DBA42BBC063800C883A8 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +278,7 @@
 				1852DBC92BBC0CEF00C883A8 /* Preloader */,
 				1852DBCA2BBC0D1000C883A8 /* Home */,
 				18943DC12BBDA5FB00EE27CB /* Detail */,
+				18239E652BBDC5EB00AC5A98 /* DatePopup */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -553,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1852DBC02BBC063A00C883A8 /* LaunchScreen.storyboard in Resources */,
+				182E9EED2BBDD05C004CF1DD /* DatePopupViewController.xib in Resources */,
 				1852DC2F2BBC958200C883A8 /* HomeTableViewCell.xib in Resources */,
 				1852DBED2BBC37AF00C883A8 /* SF-Pro.ttf in Resources */,
 				18239E532BBDAA2500AC5A98 /* DetailViewController.xib in Resources */,
@@ -617,11 +677,14 @@
 				18239E5B2BBDAEC100AC5A98 /* DetailAssembly.swift in Sources */,
 				1852DC402BBD70F600C883A8 /* ContentImageView.swift in Sources */,
 				1852DBE32BBC2FD000C883A8 /* UIView.swift in Sources */,
+				182E9EF32BBDE28B004CF1DD /* DatePopupViewModel.swift in Sources */,
 				1852DC1B2BBC5B3B00C883A8 /* RoverResponse.swift in Sources */,
 				1852DC242BBC5DA600C883A8 /* NetworkServiceProtocol.swift in Sources */,
 				1852DC062BBC4EE700C883A8 /* HTTPPath.swift in Sources */,
 				1852DC0C2BBC4FA800C883A8 /* HTTPRequestModelProtocol.swift in Sources */,
 				1852DBEA2BBC34BA00C883A8 /* Font.swift in Sources */,
+				182E9EFC2BBDE3CE004CF1DD /* DatePopupRouter.swift in Sources */,
+				182E9EF72BBDE2A0004CF1DD /* DatePopupDelegate.swift in Sources */,
 				1852DBE12BBC2AEE00C883A8 /* HomeAssembly.swift in Sources */,
 				18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */,
 				1852DC392BBD677400C883A8 /* Array.swift in Sources */,
@@ -631,6 +694,7 @@
 				1852DC192BBC593D00C883A8 /* PhotoResponse.swift in Sources */,
 				1852DBB12BBC063800C883A8 /* AppDelegate.swift in Sources */,
 				1852DBFE2BBC4E7B00C883A8 /* HTTPRequestExecutorProtocol.swift in Sources */,
+				182E9EF02BBDD07B004CF1DD /* DatePopupAssembly.swift in Sources */,
 				1852DC102BBC542F00C883A8 /* HTTPRequestBuilder.swift in Sources */,
 				1852DC262BBC683400C883A8 /* PhotosResponse.swift in Sources */,
 				1852DC2E2BBC958200C883A8 /* HomeTableViewCell.swift in Sources */,
@@ -649,13 +713,17 @@
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
 				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,
+				182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */,
 				18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */,
 				1852DC042BBC4EDE00C883A8 /* HTTPMethod.swift in Sources */,
 				1852DBD22BBC101F00C883A8 /* PreloaderViewController.swift in Sources */,
 				1852DC1F2BBC5B4F00C883A8 /* CameraInfoResponse.swift in Sources */,
 				18239E642BBDB69100AC5A98 /* ZoomView.swift in Sources */,
 				18943DCE2BBDA99300EE27CB /* DetailViewModelProtocol.swift in Sources */,
+				182E9EF52BBDE295004CF1DD /* DatePopupViewModelProtocol.swift in Sources */,
+				182E9EEE2BBDD05C004CF1DD /* DatePopupViewController.swift in Sources */,
 				18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */,
+				182E9EFA2BBDE3C4004CF1DD /* DatePopupRouterProtocol.swift in Sources */,
 				1852DC082BBC4EF100C883A8 /* HTTPRequest.swift in Sources */,
 				1852DBCD2BBC0E2100C883A8 /* HomeViewController.swift in Sources */,
 				1852DC152BBC562000C883A8 /* NetworkService.swift in Sources */,

@@ -13,4 +13,11 @@ struct HelperUtilities {
         formatter.locale = Locale.current
         return formatter
     }
+    
+    static func dateFormat(_ date: Date, to format: DateFormat) -> String {
+        let formatter = HelperUtilities.dateFormatter
+        formatter.dateFormat = format.rawValue
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
 }

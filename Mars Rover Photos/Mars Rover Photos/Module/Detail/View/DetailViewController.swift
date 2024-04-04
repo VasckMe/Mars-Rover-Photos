@@ -13,7 +13,11 @@ class DetailViewController: UIViewController {
     
     var viewModel: DetailViewModelProtocol?
     
-    @IBOutlet private weak var zoomView: ZoomView!
+    @IBOutlet private weak var zoomView: ZoomView! {
+        didSet {
+            zoomView.backgroundColor = Color.clear.value
+        }
+    }
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
             closeButton.titleLabel?.text = nil

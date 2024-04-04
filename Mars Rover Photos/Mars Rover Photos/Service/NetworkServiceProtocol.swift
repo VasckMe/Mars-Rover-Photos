@@ -6,6 +6,7 @@
 //
 
 protocol NetworkServiceProtocol {
-    func fetchPhotos(rover: RoverType, camera: String?, date: String) async throws -> [Photo]
+    func fetchNew(rover: RoverType, camera: String?, date: String) async throws -> [Photo]
+    func fetchNext(rover: RoverType, camera: String?, date: String) async throws -> [Photo]
     var isLoading: Bool { get set }
 }
