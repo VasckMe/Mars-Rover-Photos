@@ -9,15 +9,16 @@ import Foundation
 import Combine
 
 final class HomeViewModel {
-    var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
     var isCenterActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
     var isBottomActiityIndicatorHiddenPublisher = CurrentValueSubject<Bool, Never>(true)
     var isPickerSheetHidden = CurrentValueSubject<Bool, Never>(true)
-    var pickerSheetViewModel = PassthroughSubject<PickerBottomSheetViewModelProtocol, Never>()
     
-    var datePublisher = CurrentValueSubject<Date, Never>(Date())
     var roverPublisher = CurrentValueSubject<String, Never>(RoverType.all.rawValue)
     var cameraPublisher = CurrentValueSubject<String, Never>(CameraType.all.rawValue)
+    var datePublisher = CurrentValueSubject<Date, Never>(Date())
+    
+    var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
+    var pickerSheetViewModelPublisher = PassthroughSubject<PickerBottomSheetViewModelProtocol, Never>()
 
     var numberOfElements: Int {
         models.count
@@ -71,10 +72,10 @@ extension HomeViewModel: HomeViewModelProtocol {
         let roverViewModel = RoverPickerBottomSheetViewModel(input: inputModel, delegate: self)
         
         if isPickerHidden {
-            pickerSheetViewModel.send(roverViewModel)
+            pickerSheetViewModelPublisher.send(roverViewModel)
             isPickerSheetHidden.send(!isPickerHidden)
         } else {
-            pickerSheetViewModel.send(roverViewModel)
+            pickerSheetViewModelPublisher.send(roverViewModel)
         }        
     }
     
@@ -88,10 +89,10 @@ extension HomeViewModel: HomeViewModelProtocol {
         let cameraViewModel = CameraPickerBottomSheetViewModel(input: inputModel, delegate: self)
         
         if isPickerHidden {
-            pickerSheetViewModel.send(cameraViewModel)
+            pickerSheetViewModelPublisher.send(cameraViewModel)
             isPickerSheetHidden.send(!isPickerHidden)
         } else {
-            pickerSheetViewModel.send(cameraViewModel)
+            pickerSheetViewModelPublisher.send(cameraViewModel)
         }
     }
     
@@ -227,6 +228,10 @@ private extension HomeViewModel {
                     isBottomActiityIndicatorHiddenPublisher.send(true)
                 }
             } catch {
+                guard !(error is CancellationError) else {
+                    return
+                }
+                
                 await MainActor.run {
                     models = []
                     displayModels = []

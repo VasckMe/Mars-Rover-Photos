@@ -8,8 +8,6 @@
 final class DetailRouter: DetailRouterProtocol {
     weak var view: DetailViewController?
     
-    init() {}
-    
     func closeDetailScreen() {
         view?.navigationController?.popViewController(animated: true)
     }

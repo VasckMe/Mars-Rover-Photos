@@ -7,10 +7,6 @@
 
 import Combine
 
-protocol FilterHistoryDelegate: AnyObject {
-    func use(filter: FilterModel)
-}
-
 final class FilterHistoryViewModel {
     weak var delegate: FilterHistoryDelegate?
     
@@ -61,7 +57,7 @@ extension FilterHistoryViewModel: FilterHistoryViewModelProtocol {
             self?.fetch()
         }
         
-        router.showAlertSheet(useCompletion: useAction, deleteCompletion: deleteAction)
+        router.showFilterActionAlertSheet(useCompletion: useAction, deleteCompletion: deleteAction)
     }
     
     func displayModel(at index: Int) -> FilterDisplayItem? {

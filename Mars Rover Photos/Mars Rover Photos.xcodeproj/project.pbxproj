@@ -95,6 +95,9 @@
 		1886CFD12BBF299500E91B17 /* FilterHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFCF2BBF299500E91B17 /* FilterHistoryTableViewCell.swift */; };
 		1886CFD22BBF299500E91B17 /* FilterHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */; };
 		1886CFD42BBF2DE600E91B17 /* FilterHistoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */; };
+		1886CFD72BBF4C1B00E91B17 /* FilterHistoryRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFD62BBF4C1B00E91B17 /* FilterHistoryRouterProtocol.swift */; };
+		1886CFDA2BBF4C8A00E91B17 /* FilterHistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFD92BBF4C8A00E91B17 /* FilterHistoryDelegate.swift */; };
+		1886CFDC2BBF4FAC00E91B17 /* HomeRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886CFDB2BBF4FAC00E91B17 /* HomeRouterProtocol.swift */; };
 		18943DC62BBDA69700EE27CB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC42BBDA69700EE27CB /* DetailViewController.swift */; };
 		18943DC92BBDA8E900EE27CB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */; };
 		18943DCB2BBDA8FB00EE27CB /* DetailInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */; };
@@ -193,6 +196,9 @@
 		1886CFCF2BBF299500E91B17 /* FilterHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryAssembly.swift; sourceTree = "<group>"; };
+		1886CFD62BBF4C1B00E91B17 /* FilterHistoryRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryRouterProtocol.swift; sourceTree = "<group>"; };
+		1886CFD92BBF4C8A00E91B17 /* FilterHistoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHistoryDelegate.swift; sourceTree = "<group>"; };
+		1886CFDB2BBF4FAC00E91B17 /* HomeRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterProtocol.swift; sourceTree = "<group>"; };
 		18943DC42BBDA69700EE27CB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18943DC82BBDA8E900EE27CB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		18943DCA2BBDA8FB00EE27CB /* DetailInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputModel.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 		18239E552BBDAD0800AC5A98 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				1886CFDB2BBF4FAC00E91B17 /* HomeRouterProtocol.swift */,
 				18239E562BBDAD2200AC5A98 /* HomeRouter.swift */,
 			);
 			path = Router;
@@ -319,15 +326,15 @@
 		1852DBAF2BBC063800C883A8 /* Mars Rover Photos */ = {
 			isa = PBXGroup;
 			children = (
-				1852DC3E2BBD70F600C883A8 /* UI */,
-				1852DC332BBD65A700C883A8 /* HelperUtils */,
-				1852DC162BBC589900C883A8 /* Models */,
-				1852DC132BBC560F00C883A8 /* Service */,
-				1852DBF62BBC4E2A00C883A8 /* Core */,
 				1852DBC82BBC0CC700C883A8 /* App */,
 				1852DBC72BBC0CC200C883A8 /* Module */,
-				1852DBD02BBC0F0400C883A8 /* Resources */,
+				1852DC162BBC589900C883A8 /* Models */,
+				1852DC332BBD65A700C883A8 /* HelperUtils */,
+				1852DBF62BBC4E2A00C883A8 /* Core */,
+				1852DC132BBC560F00C883A8 /* Service */,
+				1852DC3E2BBD70F600C883A8 /* UI */,
 				1852DBDB2BBC273300C883A8 /* Extension */,
+				1852DBD02BBC0F0400C883A8 /* Resources */,
 				1852DBC12BBC063A00C883A8 /* Info.plist */,
 			);
 			path = "Mars Rover Photos";
@@ -662,9 +669,8 @@
 			children = (
 				1886CFD32BBF2DE600E91B17 /* FilterHistoryAssembly.swift */,
 				1886CFCD2BBF296200E91B17 /* View */,
-				1886CFC52BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift */,
-				1886CFC72BBF25A200E91B17 /* FilterHistoryViewModel.swift */,
-				1886CFCB2BBF281E00E91B17 /* FilterHistoryRouter.swift */,
+				1886CFD52BBF4BF800E91B17 /* ViewModel */,
+				1886CFD82BBF4C2A00E91B17 /* Router */,
 			);
 			path = FilterHistory;
 			sourceTree = "<group>";
@@ -685,6 +691,25 @@
 				1886CFD02BBF299500E91B17 /* FilterHistoryTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1886CFD52BBF4BF800E91B17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFC52BBF259500E91B17 /* FilterHistoryViewModelProtocol.swift */,
+				1886CFC72BBF25A200E91B17 /* FilterHistoryViewModel.swift */,
+				1886CFD92BBF4C8A00E91B17 /* FilterHistoryDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1886CFD82BBF4C2A00E91B17 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1886CFD62BBF4C1B00E91B17 /* FilterHistoryRouterProtocol.swift */,
+				1886CFCB2BBF281E00E91B17 /* FilterHistoryRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		18943DC12BBDA5FB00EE27CB /* Detail */ = {
@@ -869,6 +894,7 @@
 				1852DC392BBD677400C883A8 /* Array.swift in Sources */,
 				1886CFA32BBEDD6100E91B17 /* PickerBottomSheetViewModelProtocol.swift in Sources */,
 				1852DBDF2BBC2AB100C883A8 /* PreloaderAssembly.swift in Sources */,
+				1886CFD72BBF4C1B00E91B17 /* FilterHistoryRouterProtocol.swift in Sources */,
 				182E9F012BBEAFFC004CF1DD /* PickerBottomSheetViewController.swift in Sources */,
 				18239E622BBDB05200AC5A98 /* DetailRouterProtocol.swift in Sources */,
 				1886CFC82BBF25A200E91B17 /* FilterHistoryViewModel.swift in Sources */,
@@ -894,6 +920,7 @@
 				1852DC352BBD65C900C883A8 /* HelperUtilities.swift in Sources */,
 				1886CFCC2BBF281E00E91B17 /* FilterHistoryRouter.swift in Sources */,
 				1886CFAC2BBEF48700E91B17 /* PickerBottomSheetInputmodel.swift in Sources */,
+				1886CFDC2BBF4FAC00E91B17 /* HomeRouterProtocol.swift in Sources */,
 				1886CFB22BBF0CC000E91B17 /* UITableView.swift in Sources */,
 				1852DC372BBD65DD00C883A8 /* DateFormat.swift in Sources */,
 				1852DBF92BBC4E3E00C883A8 /* NetworkAssembly.swift in Sources */,
@@ -907,6 +934,7 @@
 				1852DBF32BBC3F7800C883A8 /* HomeViewModel.swift in Sources */,
 				1852DBB32BBC063800C883A8 /* SceneDelegate.swift in Sources */,
 				1852DC002BBC4EAC00C883A8 /* HTTPRequestExecutor.swift in Sources */,
+				1886CFDA2BBF4C8A00E91B17 /* FilterHistoryDelegate.swift in Sources */,
 				182E9EFE2BBDE561004CF1DD /* DatePopupViewControllerProtocol.swift in Sources */,
 				18239E572BBDAD2200AC5A98 /* HomeRouter.swift in Sources */,
 				1886CFD42BBF2DE600E91B17 /* FilterHistoryAssembly.swift in Sources */,

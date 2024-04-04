@@ -49,18 +49,22 @@ final class DatePopupViewController: UIViewController {
 
 extension DatePopupViewController: DatePopupViewControllerProtocol {
     func show() {
-        UIView.animate(withDuration: 0.3) {
-            self.shadowView.alpha = 1
-            self.contentView.alpha = 1
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3) {
+                self.shadowView.alpha = 1
+                self.contentView.alpha = 1
+            }
         }
     }
     
     func hide(completion: @escaping ()->()) {
-        UIView.animate(withDuration: 0.3) {
-            self.shadowView.alpha = 0
-            self.contentView.alpha = 0
-        } completion: { _ in
-            completion()
+        DispatchQueue.main.async {   
+            UIView.animate(withDuration: 0.3) {
+                self.shadowView.alpha = 0
+                self.contentView.alpha = 0
+            } completion: { _ in
+                completion()
+            }
         }
     }
 }

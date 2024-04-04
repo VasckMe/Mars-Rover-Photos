@@ -21,7 +21,6 @@ final class NetworkService {
 // MARK: - NetworkServiceProtocol
 
 extension NetworkService: NetworkServiceProtocol {
-    // TODO: - Make Date instead of String
     func fetchNew(rover: RoverType, camera: String?, date: String) async throws -> [Photo] {
         if isLoading {
             throw CancellationError()

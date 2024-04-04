@@ -41,14 +41,14 @@ final class PickerBottomSheetViewController: UIViewController {
         return view
     }()
     
-    private let closeButton: UIButton = {
+    private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "close"), for: .normal)
         button.addTarget(self, action: #selector(closeButtonAction), for: .touchUpInside)
         return button
     }()
     
-    private let saveButton: UIButton = {
+    private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "tick"), for: .normal)
         button.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
@@ -77,27 +77,30 @@ final class PickerBottomSheetViewController: UIViewController {
     }
 }
 
-// MARK: -
+// MARK: - UIPickerViewDataSource
 
-extension PickerBottomSheetViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension PickerBottomSheetViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         viewModel?.numberOfItems ?? 0
     }
-    
+}
+
+// MARK: - UIPickerViewDelegate
+
+extension PickerBottomSheetViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let item = viewModel?.displayModel(at: row)
         return item?.name
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel?.didTriggerSelectItem(at: row)
     }
 }
-
 
 // MARK: - Private
 

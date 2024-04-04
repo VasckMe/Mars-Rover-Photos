@@ -12,8 +12,6 @@ final class HomeTableViewCell: UITableViewCell {
     static let nibName = "HomeTableViewCell"
     static let identifier = "HomeTableViewCell"
     
-    // MARK: Outlets
-    
     @IBOutlet private weak var shadowView: UIView! {
         didSet {
             shadowView.layer.cornerRadius = 30

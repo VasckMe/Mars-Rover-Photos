@@ -5,19 +5,12 @@
 //  Created by Anton Kasaryn on 4.04.24.
 //
 
-protocol FilterHistoryRouterProtocol {
-    func showAlertSheet(useCompletion: @escaping ()->()?, deleteCompletion: @escaping ()->()?)
-    func closeFilterHistoryScreen()
-}
-
 import UIKit
 
 final class FilterHistoryRouter: FilterHistoryRouterProtocol {
     weak var view: FilterHistoryViewController?
     
-    init() {}
-    
-    func showAlertSheet(useCompletion: @escaping ()->()?, deleteCompletion: @escaping ()->()?) {
+    func showFilterActionAlertSheet(useCompletion: @escaping ()->()?, deleteCompletion: @escaping ()->()?) {
         let alertController = UIAlertController(title: nil, message: "Menu Filter", preferredStyle: .actionSheet)
         let useAction = UIAlertAction(title: "Use", style: .default) { _ in
             useCompletion()

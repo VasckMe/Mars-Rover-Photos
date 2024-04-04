@@ -41,16 +41,15 @@ final class HomeViewController: UIViewController {
         return label
     }()
     
-    private let dateButton: UIButton = {
+    private lazy var dateButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "calendar"), for: .normal)
         button.addTarget(self, action: #selector(dateButtonAction), for: .touchUpInside)
         return button
     }()
     
-    private let roverButton: UIButton = {
+    private lazy var roverButton: UIButton = {
         let button = UIButton()
-//        button.setTitle("All", for: .normal)
         button.setImage(UIImage(named: "rover"), for: .normal)
         button.titleLabel?.font = Font.body2.value
         button.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
@@ -69,7 +68,7 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
-    private let cameraButton: UIButton = {
+    private lazy var cameraButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "camera"), for: .normal)
         button.titleLabel?.font = Font.body2.value
@@ -137,7 +136,7 @@ final class HomeViewController: UIViewController {
         return tableView
     }()
     
-    private let historyButton: UIButton = {
+    private lazy var historyButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "history"), for: .normal)
         button.backgroundColor = Color.accentOne.value
@@ -372,7 +371,7 @@ private extension HomeViewController {
                 self?.animatePickerSheet(isHidden: isHidden)
             })
             .store(in: &cancellables)
-        viewModel?.pickerSheetViewModel
+        viewModel?.pickerSheetViewModelPublisher
             .sink(receiveValue: { [weak self] viewModel in
                 self?.pickerSheetView?.viewModel = viewModel
             })

@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol HomeRouterProtocol {
-    func openDetailScreen(input: DetailInputModel)
-    func openDatePopupScreen(delegate: DatePopupDelegate)
-    func showFilterHistoryScreen(delegate: FilterHistoryDelegate)
-    func showSaveAlert(title: String, subtitle: String, completion: @escaping ()->())
-}
-
 final class HomeRouter: HomeRouterProtocol {
     weak var view: HomeViewController?
     

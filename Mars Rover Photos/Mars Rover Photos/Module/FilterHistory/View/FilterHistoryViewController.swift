@@ -18,7 +18,7 @@ final class FilterHistoryViewController: UIViewController {
         return view
     }()
     
-    private let navigationBarBackButton: UIButton = {
+    private lazy var navigationBarBackButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "back.png"), for: .normal)
         button.addTarget(self, action: #selector(navigationBarBackButtonAction), for: .touchUpInside)

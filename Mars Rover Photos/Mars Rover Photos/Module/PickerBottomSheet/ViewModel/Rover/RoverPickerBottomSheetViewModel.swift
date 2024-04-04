@@ -7,7 +7,7 @@
 
 import Combine
 
-final class RoverPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol {
+final class RoverPickerBottomSheetViewModel {
     weak var delegate: RoverPickerBottomSheetDelegate?
     
     var titlePublisher = PassthroughSubject<String, Never>()
@@ -23,7 +23,11 @@ final class RoverPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol 
         self.inputModel = input
         self.delegate = delegate
     }
-    
+}
+
+// MARK: - PickerBottomSheetViewModelProtocol
+
+extension RoverPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol {
     func displayModel(at index: Int) -> PickerDisplayItem? {
         return inputModel.displayItems[safe: index]
     }

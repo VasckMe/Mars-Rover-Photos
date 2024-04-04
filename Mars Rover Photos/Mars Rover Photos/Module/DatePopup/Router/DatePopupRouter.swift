@@ -8,8 +8,6 @@
 final class DatePopupRouter: DatePopupRouterProtocol {
     weak var view: DatePopupViewController?
     
-    init() {}
-    
     func closeDatePopupScreen() {
         view?.dismiss(animated: true)
     }

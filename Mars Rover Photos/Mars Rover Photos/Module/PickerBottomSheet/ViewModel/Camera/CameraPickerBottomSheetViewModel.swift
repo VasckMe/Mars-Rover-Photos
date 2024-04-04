@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class CameraPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol {
+final class CameraPickerBottomSheetViewModel {
     weak var delegate: CameraPickerBottomSheetDelegate?
     
     var titlePublisher = PassthroughSubject<String, Never>()
@@ -24,7 +24,11 @@ final class CameraPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol
         self.inputModel = input
         self.delegate = delegate
     }
-    
+}
+
+// MARK: - PickerBottomSheetViewModelProtocol
+
+extension CameraPickerBottomSheetViewModel: PickerBottomSheetViewModelProtocol {
     func displayModel(at index: Int) -> PickerDisplayItem? {
         return inputModel.displayItems[safe: index]
     }

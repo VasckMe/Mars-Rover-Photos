@@ -23,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-sf-h67" customClass="ZoomView" customModule="Mars_Rover_Photos" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4sY-sf-h67" secondAttribute="height" multiplier="1:1" id="nL0-Xd-Amm"/>
                     </constraints>

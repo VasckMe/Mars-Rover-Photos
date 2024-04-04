@@ -10,7 +10,6 @@ import Lottie
 import SnapKit
 
 final class PreloaderViewController: UIViewController {
-    
     private let squareView: UIView = {
         let view = UIView()
         view.backgroundColor = Color.accentOne.value
