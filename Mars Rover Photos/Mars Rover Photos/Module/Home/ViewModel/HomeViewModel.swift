@@ -17,7 +17,7 @@ final class HomeViewModel {
     var cameraPublisher = CurrentValueSubject<String, Never>(CameraType.all.rawValue)
     var datePublisher = CurrentValueSubject<Date, Never>(Date())
     
-    var modelPublisher = PassthroughSubject<[Photo], NetworkError>()
+    var modelPublisher = PassthroughSubject<[Photo], Never>()
     var pickerSheetViewModelPublisher = PassthroughSubject<PickerBottomSheetViewModelProtocol, Never>()
 
     var numberOfElements: Int {
@@ -194,7 +194,6 @@ private extension HomeViewModel {
                 await MainActor.run {
                     models = []
                     displayModels = []
-                    modelPublisher.send(completion: .failure(error as? NetworkError ?? .unknown))
                     isCenterActiityIndicatorHiddenPublisher.send(true)
                 }
             }
@@ -222,9 +221,11 @@ private extension HomeViewModel {
             do {
                 let photos = try await networkService.fetchNext(rover: roverType, camera: cameraString, date: dateString)
                 await MainActor.run {
-                    models.append(contentsOf: photos)
-                    displayModels = models.map { HomeCellItem(photo: $0) }
-                    modelPublisher.send(models)
+                    if !photos.isEmpty {
+                        models.append(contentsOf: photos)
+                        displayModels = models.map { HomeCellItem(photo: $0) }
+                        modelPublisher.send(models)
+                    }
                     isBottomActiityIndicatorHiddenPublisher.send(true)
                 }
             } catch {
@@ -233,9 +234,6 @@ private extension HomeViewModel {
                 }
                 
                 await MainActor.run {
-                    models = []
-                    displayModels = []
-                    modelPublisher.send(completion: .failure(error as? NetworkError ?? .unknown))
                     isBottomActiityIndicatorHiddenPublisher.send(true)
                 }
             }

@@ -210,7 +210,7 @@ extension HomeViewController: UITableViewDelegate {
         guard let viewModel = viewModel else {
             return
         }
-        print("Display: \(indexPath.row)")
+        
         if indexPath.row == viewModel.numberOfElements - 1 {
             viewModel.didTriggerReachEndOfList()
         }
@@ -331,11 +331,7 @@ private extension HomeViewController {
     
     func bind() {
         viewModel?.modelPublisher
-            .sink(receiveCompletion: { [weak self] _ in
-                self?.tableView.setNoDataPlaceholder("Error")
-                self?.tableView.reloadData()
-                self?.hidePreloader()
-            }, receiveValue: { [weak self] photos in
+            .sink(receiveValue: { [weak self] photos in
                 if photos.isEmpty {
                     self?.tableView.setNoDataPlaceholder("No data")
                 } else {

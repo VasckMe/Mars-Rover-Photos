@@ -17,7 +17,7 @@ protocol HomeViewModelProtocol {
     var cameraPublisher: CurrentValueSubject<String, Never> { get }
     var datePublisher: CurrentValueSubject<Date, Never> { get }
     
-    var modelPublisher: PassthroughSubject<[Photo], NetworkError> { get }
+    var modelPublisher: PassthroughSubject<[Photo], Never> { get }
     var pickerSheetViewModelPublisher: PassthroughSubject<PickerBottomSheetViewModelProtocol, Never> { get }
     
     var numberOfElements: Int { get }
