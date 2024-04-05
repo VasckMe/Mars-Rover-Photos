@@ -7,13 +7,17 @@
 
 import Foundation
 
-final class PersistenceService: PersistenceServiceProtocol {
+final class PersistenceService {
     private let persistenceManager: PersistenceStorageManagerProtocol
     
     init(persistenceManager: PersistenceStorageManagerProtocol) {
         self.persistenceManager = persistenceManager
     }
-    
+}
+
+// MARK: - PersistenceServiceProtocol
+
+extension PersistenceService: PersistenceServiceProtocol {
     func saveFilter(_ filter: FilterModel) throws {
         do {
             var persistenceModel = PersistenceFilter(context: self.persistenceManager.context)

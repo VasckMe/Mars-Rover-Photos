@@ -16,6 +16,8 @@ struct Photo {
     let date: String
 }
 
+// MARK: - Init from backend model
+
 extension Photo {
     init(response: PhotoResponse) {
         self.id = response.id

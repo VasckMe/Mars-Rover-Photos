@@ -17,6 +17,8 @@ struct FilterDisplayItem {
     }
 }
 
+// MARK: - Init from business model
+
 extension FilterDisplayItem {
     init(model: FilterModel) {
         self.rover = model.rover

@@ -639,8 +639,8 @@
 			isa = PBXGroup;
 			children = (
 				1852DBB92BBC063800C883A8 /* Filter.xcdatamodeld */,
-				1886CFB42BBF0EBD00E91B17 /* PersistenceStorageManager.swift */,
 				1886CFB62BBF0F1500E91B17 /* PersistenceStorageManagerProtocol.swift */,
+				1886CFB42BBF0EBD00E91B17 /* PersistenceStorageManager.swift */,
 				1886CFB82BBF0F2700E91B17 /* PersistenceStorageManagerError.swift */,
 			);
 			path = Persistence;

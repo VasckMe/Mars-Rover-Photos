@@ -13,6 +13,8 @@ struct FilterModel {
     let date: Date
 }
 
+// MARK: - Init from persistence model
+
 extension FilterModel {
     init?(model: PersistenceFilter) {
         guard
@@ -27,7 +29,11 @@ extension FilterModel {
         self.camera = cameraName
         self.date = date
     }
-    
+}
+
+// MARK: - Init from display model
+
+extension FilterModel {
     init(displayModel: FilterDisplayItem) {
         self.rover = displayModel.rover
         self.camera = displayModel.camera

@@ -88,7 +88,7 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
-    private let stack: UIStackView = {
+    private let contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.backgroundColor = Color.clear.value
@@ -96,7 +96,7 @@ final class HomeViewController: UIViewController {
         return stackView
     }()
     
-    private let saveButton: UIButton = {
+    private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "add"), for: .normal)
         button.backgroundColor = Color.backgroundOne.value
@@ -246,8 +246,8 @@ private extension HomeViewController {
         headerView.addSubview(roverButton)
         headerView.addSubview(cameraButton)
         headerView.addSubview(saveButton)
-        view.addSubview(stack)
-        stack.addArrangedSubview(tableView)
+        view.addSubview(contentStackView)
+        contentStackView.addArrangedSubview(tableView)
         view.addSubview(historyButton)
         view.addSubview(centerActivityIndicatorView)
         view.addSubview(bottomActivityIndicatorView)
@@ -293,7 +293,7 @@ private extension HomeViewController {
             make.centerY.equalTo(cameraButton)
         }
 
-        stack.snp.makeConstraints { make in
+        contentStackView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
         }
@@ -341,6 +341,7 @@ private extension HomeViewController {
                 self?.hidePreloader()
             })
             .store(in: &cancellables)
+        
         viewModel?.isCenterActiityIndicatorHiddenPublisher
             .sink(receiveValue: { [weak self] isHidden in
                 isHidden
@@ -356,27 +357,32 @@ private extension HomeViewController {
                     : self?.bottomActivityIndicatorView.startAnimating()
             })
             .store(in: &cancellables)
+        
         viewModel?.datePublisher
             .map { HelperUtilities.dateFormat($0, to: .MMMdyyyy) }
             .sink(receiveValue: { [weak self] dateString in
                 self?.headerSubtitleLabel.text = dateString
             })
             .store(in: &cancellables)
+        
         viewModel?.isPickerSheetHidden
             .sink(receiveValue: { [weak self] isHidden in
                 self?.animatePickerSheet(isHidden: isHidden)
             })
             .store(in: &cancellables)
+        
         viewModel?.pickerSheetViewModelPublisher
             .sink(receiveValue: { [weak self] viewModel in
                 self?.pickerSheetView?.viewModel = viewModel
             })
             .store(in: &cancellables)
+        
         viewModel?.roverPublisher
             .sink(receiveValue: { [weak self] rover in
                 self?.roverButton.setTitle(rover, for: .normal)
             })
             .store(in: &cancellables)
+        
         viewModel?.cameraPublisher
             .sink(receiveValue: { [weak self] camera in
                 self?.cameraButton.setTitle(camera, for: .normal)
@@ -385,17 +391,19 @@ private extension HomeViewController {
     }
     
     func animatePickerSheet(isHidden: Bool) {
-        pickerSheetView?.view.isHidden = isHidden
-        
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
+        DispatchQueue.main.async {
+            self.pickerSheetView?.view.isHidden = isHidden
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     func configurePickerSheet() {
         let bottomSheet = PickerBottomSheetViewController()
         pickerSheetView = bottomSheet
-        stack.addArrangedSubview(bottomSheet.view)
+        contentStackView.addArrangedSubview(bottomSheet.view)
         bottomSheet.didMove(toParent: self)
     }
     

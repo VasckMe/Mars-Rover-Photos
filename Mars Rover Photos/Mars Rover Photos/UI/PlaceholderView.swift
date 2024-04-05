@@ -8,7 +8,6 @@
 import UIKit
 
 final class PlaceholderView: UIView {
-
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "error")

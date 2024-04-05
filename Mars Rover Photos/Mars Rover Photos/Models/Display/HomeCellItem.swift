@@ -24,6 +24,8 @@ struct HomeCellItem {
     }
 }
 
+// MARK: - Init from business model
+
 extension HomeCellItem {
     init(photo: Photo) {
         self.rover = photo.roverType
