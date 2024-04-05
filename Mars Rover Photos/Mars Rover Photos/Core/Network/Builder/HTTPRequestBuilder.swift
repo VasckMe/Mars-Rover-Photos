@@ -9,6 +9,7 @@ import Foundation
 
 final class HTTPRequestBuilder: HTTPRequestBuilderProtocol {
     private let baseURLString = "https://api.nasa.gov/mars-photos/api/v1"
+    private let apiKey = "xfFhvZ3hFEJ9Ai5zYb35YR7f8JCF3Ei2huF5cCUC"
     
     func build(httpRequest: HTTPRequest) throws -> URLRequest {
         do {
@@ -51,14 +52,11 @@ private extension HTTPRequestBuilder {
     
     func buildQueryParameters(request: HTTPRequestModelProtocol) -> [URLQueryItem]? {
         if var params = request.query {
-            params["api_key"] = "xfFhvZ3hFEJ9Ai5zYb35YR7f8JCF3Ei2huF5cCUC"
+            params["api_key"] = apiKey
             return params.map { URLQueryItem(name: $0.key, value: $0.value) }
         }
-//        guard let parameters = request.query else {
-//            return nil
-//        }
         
-        return [URLQueryItem(name: "api_key", value: "xfFhvZ3hFEJ9Ai5zYb35YR7f8JCF3Ei2huF5cCUC")]
+        return [URLQueryItem(name: "api_key", value: apiKey)]
     }
     
     func buildURLRequest(url: URL, request: HTTPRequestModelProtocol) throws -> URLRequest {
