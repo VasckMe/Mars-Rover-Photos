@@ -65,7 +65,8 @@ extension HomeViewModel: HomeViewModelProtocol {
     func didTriggerRoverButton() {
         let inputModel = PickerBottomSheetInputmodel(
             title: "Rover",
-            displayItems: RoverType.allCases.map {PickerDisplayItem(name: $0.rawValue)}
+            displayItems: RoverType.allCases.map {PickerDisplayItem(name: $0.rawValue)},
+            selectedItemString: roverPublisher.value
         )
         
         let isPickerHidden = isPickerSheetHidden.value
@@ -82,7 +83,8 @@ extension HomeViewModel: HomeViewModelProtocol {
     func didTriggerCameraButton() {
         let inputModel = PickerBottomSheetInputmodel(
             title: "Camera",
-            displayItems: CameraType.allCases.map {PickerDisplayItem(name: $0.rawValue)}
+            displayItems: CameraType.allCases.map {PickerDisplayItem(name: $0.rawValue)},
+            selectedItemString: cameraPublisher.value
         )
         
         let isPickerHidden = isPickerSheetHidden.value

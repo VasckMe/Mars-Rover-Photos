@@ -11,6 +11,7 @@ protocol PickerBottomSheetViewModelProtocol {
     var titlePublisher: PassthroughSubject<String, Never> { get }
     var displayItemsPublisher: PassthroughSubject<[PickerDisplayItem], Never> { get }
     var numberOfItems: Int { get }
+    var selectedItemIndex: Int { get }
     
     func displayModel(at index: Int) -> PickerDisplayItem?
     func didTriggerUpdatePublishers()

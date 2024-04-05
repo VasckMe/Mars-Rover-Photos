@@ -74,6 +74,7 @@ final class PickerBottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        setSelectedItem()
     }
 }
 
@@ -163,6 +164,14 @@ private extension PickerBottomSheetViewController {
                 self?.pickerView.reloadAllComponents()
             })
             .store(in: &cancellables)
+    }
+    
+    func setSelectedItem() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        pickerView.selectRow(viewModel.selectedItemIndex, inComponent: 0, animated: false)
     }
     
     @objc func closeButtonAction() {

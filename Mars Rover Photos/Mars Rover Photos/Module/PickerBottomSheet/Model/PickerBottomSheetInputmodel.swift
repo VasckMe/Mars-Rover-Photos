@@ -8,4 +8,5 @@
 struct PickerBottomSheetInputmodel {
     let title: String
     let displayItems: [PickerDisplayItem]
+    let selectedItemString: String
 }
